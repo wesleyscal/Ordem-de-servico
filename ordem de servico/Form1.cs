@@ -20,7 +20,7 @@ namespace ordem_de_servico
         }
 
         clasegury CG = new clasegury();
-               
+
         //Metodos
         private void atualizarform()
         {
@@ -111,5 +111,16 @@ namespace ordem_de_servico
             txtDatafinal.Select(0, 0);
 
         }
+
+        //alteraçao de bosta
+        private void bulacha()
+        {
+            int bulacha = 0;
+            if (bulacha <= 0)
+            {
+                MessageBox.Show("Bulacha");
+            }
+        }
+
     }
 }
