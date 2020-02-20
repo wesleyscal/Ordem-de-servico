@@ -236,6 +236,7 @@
             this.BTNsalvar.TabIndex = 16;
             this.BTNsalvar.Text = "Salvar";
             this.BTNsalvar.UseVisualStyleBackColor = false;
+            this.BTNsalvar.Click += new System.EventHandler(this.BTNsalvar_Click);
             // 
             // BTNlimpar
             // 
@@ -258,6 +259,8 @@
             this.Controls.Add(this.BTNsalvar);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
             this.Name = "NovaOrdem";
             this.Text = "NovaOrdem";
             this.Load += new System.EventHandler(this.NovaOrdem_Load);

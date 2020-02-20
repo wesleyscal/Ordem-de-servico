@@ -134,6 +134,19 @@ namespace ordem_de_servico
             return N_DataMySQL;
         }
 
+        public string DataHoraMySQL(string DataNormal)
+        {
+            string _DataNormal = DataNormal.Replace("/", "-");
+            string N_DataMySQL = _DataNormal.Substring(6, 4) +
+                                 _DataNormal.Substring(5, 1) +
+                                 _DataNormal.Substring(3, 2) +
+                                 _DataNormal.Substring(2, 1) +
+                                 _DataNormal.Substring(0, 2) +
+                                 _DataNormal.Substring(10, 1) +
+                                 _DataNormal.Substring(11, 8);
+            return N_DataMySQL;
+        }
+
         //TEXBOX EM FORMATO NUMÉRICO "MOEDA"
         public void Moeda(TextBox TXT)
         {
@@ -172,10 +185,11 @@ namespace ordem_de_servico
             //Data Minima e Maxima
             DTP.MinDate = new DateTime(2000, 6, 20);
             DTP.MaxDate = DateTime.Now;
+            DTP.Value = DateTime.Now;
 
             //Data Formato
             DTP.Format = DateTimePickerFormat.Custom;
-            DTP.CustomFormat = "dd/MM/yyyy HH:mm";
+            DTP.CustomFormat = "dd/MM/yyyy HH:mm:ss";
         }
 
         #endregion

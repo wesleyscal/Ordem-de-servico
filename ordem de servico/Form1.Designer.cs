@@ -45,6 +45,7 @@
             this.txtDataInicial = new System.Windows.Forms.MaskedTextBox();
             this.btnNovaOrdem = new System.Windows.Forms.Button();
             this.btnCliente = new System.Windows.Forms.Button();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvOrdem)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -164,7 +165,6 @@
             this.cbbCliente.Name = "cbbCliente";
             this.cbbCliente.Size = new System.Drawing.Size(174, 21);
             this.cbbCliente.TabIndex = 4;
-            this.cbbCliente.Click += new System.EventHandler(this.cbbCliente_Click);
             // 
             // cbbUsuario
             // 
@@ -197,6 +197,7 @@
             this.txtDatafinal.Size = new System.Drawing.Size(100, 20);
             this.txtDatafinal.TabIndex = 1;
             this.txtDatafinal.ValidatingType = typeof(System.DateTime);
+            this.txtDatafinal.Click += new System.EventHandler(this.txtDatafinal_Click);
             // 
             // txtDataInicial
             // 
@@ -206,6 +207,7 @@
             this.txtDataInicial.Size = new System.Drawing.Size(100, 20);
             this.txtDataInicial.TabIndex = 0;
             this.txtDataInicial.ValidatingType = typeof(System.DateTime);
+            this.txtDataInicial.Click += new System.EventHandler(this.txtDataInicial_Click);
             // 
             // btnNovaOrdem
             // 
@@ -229,23 +231,39 @@
             this.btnCliente.UseVisualStyleBackColor = false;
             this.btnCliente.Click += new System.EventHandler(this.btnCliente_Click);
             // 
+            // textBox1
+            // 
+            this.textBox1.BackColor = System.Drawing.SystemColors.MenuText;
+            this.textBox1.ForeColor = System.Drawing.SystemColors.Window;
+            this.textBox1.Location = new System.Drawing.Point(-1, 553);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(786, 20);
+            this.textBox1.TabIndex = 4;
+            this.textBox1.Text = " || F2 - Atualizar ||";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Gray;
-            this.ClientSize = new System.Drawing.Size(784, 561);
+            this.ClientSize = new System.Drawing.Size(784, 572);
+            this.Controls.Add(this.textBox1);
             this.Controls.Add(this.btnCliente);
             this.Controls.Add(this.btnNovaOrdem);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.dgvOrdem);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
+            this.KeyPreview = true;
+            this.MaximizeBox = false;
             this.Name = "Form1";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Form1_KeyDown);
             ((System.ComponentModel.ISupportInitialize)(this.dgvOrdem)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -268,6 +286,7 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnCliente;
+        private System.Windows.Forms.TextBox textBox1;
     }
 }
 

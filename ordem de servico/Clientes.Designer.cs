@@ -128,7 +128,9 @@
             this.Controls.Add(this.BTNlimpar);
             this.Controls.Add(this.BTNsalvar);
             this.Controls.Add(this.DGVcliente);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
             this.Name = "Clientes";
             this.Text = "Clientes";
             this.Load += new System.EventHandler(this.Clientes_Load);

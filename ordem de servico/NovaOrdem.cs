@@ -94,6 +94,63 @@ namespace ordem_de_servico
 
             CBBprioridade.SelectedIndex = 0;
         }
+        private void SalvarOrdem()
+        {
+            //Validações
+            if (CBBcliente.Text.Trim() == "")
+            {
+                MessageBox.Show("Informe um cliente!", Text, MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                return;
+            }
+            if (CBBusuario.SelectedIndex == 0)
+            {
+                MessageBox.Show("Informe um usuário!", Text, MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                return;
+            }
+            if (CBBprioridade.SelectedIndex == 0)
+            {
+                MessageBox.Show("Informe uma prioridade!", Text, MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                return;
+            }
+            if (TXTtitulo.Text.Trim() == "")
+            {
+                MessageBox.Show("Informe um título!", Text, MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                return;
+            }
+            if (TXTdescricao.Text.Trim() == "")
+            {
+                MessageBox.Show("Informe a descrição!", Text, MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                return;
+            }
+
+            DialogResult confirm = MessageBox.Show("Deseja Continuar?", "Salvar Ordem", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation, MessageBoxDefaultButton.Button2);
+            if (confirm == DialogResult.Yes)
+            {
+                string id_cliente = TXTcodigo.Text;
+                string usuario = CBBusuario.Text;
+                string prioridade = CBBprioridade.Text;
+                string data_hora = CG.DataHoraMySQL(DTPnovaOrdem.Text);
+                string titulo = TXTtitulo.Text;
+                string descricao = TXTdescricao.Text;
+                string estado = "Aberto";
+
+                string cmd = "insert into ordem_servico values(null," + id_cliente + ",'" + usuario + "','" + prioridade + "','" + data_hora + "','" + titulo + "','" + descricao + "','" + estado + "','" + null + "','" + null + "');";
+                CG.ExecutarComandoSql(cmd);
+
+                LimparTela();
+            }
+        }
+        private void LimparTela()
+        {
+            TXTcodigo.Clear();
+            TXTdescricao.Clear();
+            TXTsetor.Clear();
+            TXTtitulo.Clear();
+            CBBcliente.Items.Clear();
+            CarregarDadosComboBox();
+            CBBprioridade.SelectedIndex = 0;
+            CBBusuario.SelectedIndex = 0;
+        }
 
         //Form
         private void NovaOrdem_Load(object sender, EventArgs e)
@@ -129,14 +186,19 @@ namespace ordem_de_servico
         //Botão
         private void BTNlimpar_Click(object sender, EventArgs e)
         {
-            TXTcodigo.Clear();
-            TXTdescricao.Clear();
-            TXTsetor.Clear();
-            TXTtitulo.Clear();
-            CBBcliente.Items.Clear();
-            CBBprioridade.SelectedIndex = 0;
-            CBBusuario.SelectedIndex = 0;
-
+            LimparTela();
+        }
+        private void BTNsalvar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                SalvarOrdem();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erro!\n\n" + ex.Message, Text, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
         }
     }
 }
