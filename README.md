@@ -1,12 +1,13 @@
 # ordem-de-servico
 
-Teste 01
-26/02 -  4:30 
+Teste 02
+26/02 -  5:08 
 
 # atualmente
 
-ainda com a Bulacha99
+Consegui Fazer Primeiro Pull
 
 # Objetivo
 
-mudar bulacha99 para area comentada
+Aperfeiçoar o pull
+
