@@ -20,7 +20,7 @@ namespace ordem_de_servico
         }
 
         clasegury CG = new clasegury();
-               
+
         //Metodos
         private void atualizarform()
         {
@@ -119,9 +119,5 @@ namespace ordem_de_servico
          *  Teste 01
          * 
          */
-
-
-
-
     }
 }
