@@ -115,10 +115,10 @@ namespace ordem_de_servico
         //alteraçao de bosta
         private void bulacha()
         {
-            int bulacha = 99;
-            if (bulacha <= 99)
+            int bulacha = 03;
+            if (bulacha <= 03)
             {
-                MessageBox.Show("Bulacha99");
+                MessageBox.Show("26/02");
             }
         }
 
