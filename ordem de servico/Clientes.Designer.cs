@@ -43,6 +43,10 @@
             // 
             // DGVcliente
             // 
+            this.DGVcliente.AllowUserToAddRows = false;
+            this.DGVcliente.AllowUserToDeleteRows = false;
+            this.DGVcliente.AllowUserToResizeColumns = false;
+            this.DGVcliente.AllowUserToResizeRows = false;
             this.DGVcliente.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.DGVcliente.Location = new System.Drawing.Point(12, 78);
             this.DGVcliente.Name = "DGVcliente";

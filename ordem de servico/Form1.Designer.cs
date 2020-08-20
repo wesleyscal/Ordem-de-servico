@@ -35,9 +35,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.btnPesquisar = new System.Windows.Forms.Button();
-            this.cbxFinalizado = new System.Windows.Forms.CheckBox();
-            this.cbxAberto = new System.Windows.Forms.CheckBox();
-            this.cbxAndamento = new System.Windows.Forms.CheckBox();
             this.cbbCliente = new System.Windows.Forms.ComboBox();
             this.cbbUsuario = new System.Windows.Forms.ComboBox();
             this.LB = new System.Windows.Forms.Label();
@@ -46,6 +43,9 @@
             this.btnNovaOrdem = new System.Windows.Forms.Button();
             this.btnCliente = new System.Windows.Forms.Button();
             this.textBox1 = new System.Windows.Forms.TextBox();
+            this.RDBaberto = new System.Windows.Forms.RadioButton();
+            this.RDBandamento = new System.Windows.Forms.RadioButton();
+            this.RDBfinalizado = new System.Windows.Forms.RadioButton();
             ((System.ComponentModel.ISupportInitialize)(this.dgvOrdem)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -61,14 +61,14 @@
             // groupBox1
             // 
             this.groupBox1.BackColor = System.Drawing.Color.Gray;
+            this.groupBox1.Controls.Add(this.RDBfinalizado);
+            this.groupBox1.Controls.Add(this.RDBandamento);
+            this.groupBox1.Controls.Add(this.RDBaberto);
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.btnPesquisar);
-            this.groupBox1.Controls.Add(this.cbxFinalizado);
-            this.groupBox1.Controls.Add(this.cbxAberto);
-            this.groupBox1.Controls.Add(this.cbxAndamento);
             this.groupBox1.Controls.Add(this.cbbCliente);
             this.groupBox1.Controls.Add(this.cbbUsuario);
             this.groupBox1.Controls.Add(this.LB);
@@ -120,42 +120,13 @@
             // btnPesquisar
             // 
             this.btnPesquisar.BackColor = System.Drawing.Color.SkyBlue;
-            this.btnPesquisar.Location = new System.Drawing.Point(645, 13);
+            this.btnPesquisar.Location = new System.Drawing.Point(637, 13);
             this.btnPesquisar.Name = "btnPesquisar";
-            this.btnPesquisar.Size = new System.Drawing.Size(109, 57);
+            this.btnPesquisar.Size = new System.Drawing.Size(117, 57);
             this.btnPesquisar.TabIndex = 4;
             this.btnPesquisar.Text = "Pesquisar";
             this.btnPesquisar.UseVisualStyleBackColor = false;
-            // 
-            // cbxFinalizado
-            // 
-            this.cbxFinalizado.AutoSize = true;
-            this.cbxFinalizado.Location = new System.Drawing.Point(559, 53);
-            this.cbxFinalizado.Name = "cbxFinalizado";
-            this.cbxFinalizado.Size = new System.Drawing.Size(78, 17);
-            this.cbxFinalizado.TabIndex = 7;
-            this.cbxFinalizado.Text = "Finalizados";
-            this.cbxFinalizado.UseVisualStyleBackColor = true;
-            // 
-            // cbxAberto
-            // 
-            this.cbxAberto.AutoSize = true;
-            this.cbxAberto.Location = new System.Drawing.Point(559, 13);
-            this.cbxAberto.Name = "cbxAberto";
-            this.cbxAberto.Size = new System.Drawing.Size(62, 17);
-            this.cbxAberto.TabIndex = 6;
-            this.cbxAberto.Text = "Abertos";
-            this.cbxAberto.UseVisualStyleBackColor = true;
-            // 
-            // cbxAndamento
-            // 
-            this.cbxAndamento.AutoSize = true;
-            this.cbxAndamento.Location = new System.Drawing.Point(559, 33);
-            this.cbxAndamento.Name = "cbxAndamento";
-            this.cbxAndamento.Size = new System.Drawing.Size(80, 17);
-            this.cbxAndamento.TabIndex = 5;
-            this.cbxAndamento.Text = "Andamento";
-            this.cbxAndamento.UseVisualStyleBackColor = true;
+            this.btnPesquisar.Click += new System.EventHandler(this.btnPesquisar_Click);
             // 
             // cbbCliente
             // 
@@ -241,6 +212,39 @@
             this.textBox1.TabIndex = 4;
             this.textBox1.Text = " || F2 - Atualizar ||";
             // 
+            // RDBaberto
+            // 
+            this.RDBaberto.AutoSize = true;
+            this.RDBaberto.Location = new System.Drawing.Point(559, 13);
+            this.RDBaberto.Name = "RDBaberto";
+            this.RDBaberto.Size = new System.Drawing.Size(56, 17);
+            this.RDBaberto.TabIndex = 12;
+            this.RDBaberto.TabStop = true;
+            this.RDBaberto.Text = "Aberto";
+            this.RDBaberto.UseVisualStyleBackColor = true;
+            // 
+            // RDBandamento
+            // 
+            this.RDBandamento.AutoSize = true;
+            this.RDBandamento.Location = new System.Drawing.Point(559, 33);
+            this.RDBandamento.Name = "RDBandamento";
+            this.RDBandamento.Size = new System.Drawing.Size(79, 17);
+            this.RDBandamento.TabIndex = 13;
+            this.RDBandamento.TabStop = true;
+            this.RDBandamento.Text = "Andamento";
+            this.RDBandamento.UseVisualStyleBackColor = true;
+            // 
+            // RDBfinalizado
+            // 
+            this.RDBfinalizado.AutoSize = true;
+            this.RDBfinalizado.Location = new System.Drawing.Point(559, 54);
+            this.RDBfinalizado.Name = "RDBfinalizado";
+            this.RDBfinalizado.Size = new System.Drawing.Size(72, 17);
+            this.RDBfinalizado.TabIndex = 14;
+            this.RDBfinalizado.TabStop = true;
+            this.RDBfinalizado.Text = "Finalizado";
+            this.RDBfinalizado.UseVisualStyleBackColor = true;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -256,7 +260,7 @@
             this.KeyPreview = true;
             this.MaximizeBox = false;
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.Text = "Ordem De Serviço";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Form1_KeyDown);
             ((System.ComponentModel.ISupportInitialize)(this.dgvOrdem)).EndInit();
@@ -277,9 +281,6 @@
         private System.Windows.Forms.MaskedTextBox txtDataInicial;
         private System.Windows.Forms.Button btnNovaOrdem;
         private System.Windows.Forms.Button btnPesquisar;
-        private System.Windows.Forms.CheckBox cbxFinalizado;
-        private System.Windows.Forms.CheckBox cbxAberto;
-        private System.Windows.Forms.CheckBox cbxAndamento;
         private System.Windows.Forms.ComboBox cbbCliente;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
@@ -287,6 +288,9 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnCliente;
         private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.RadioButton RDBfinalizado;
+        private System.Windows.Forms.RadioButton RDBandamento;
+        private System.Windows.Forms.RadioButton RDBaberto;
     }
 }
 

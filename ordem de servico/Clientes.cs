@@ -47,19 +47,21 @@ namespace ordem_de_servico
             CG.ExibirDGV(DGVcliente);
             CG.FormatarDGV(DGVcliente);
 
-            
+
         }
         private void SalvarProduto()
         {
             DialogResult confirm = MessageBox.Show("Deseja Continuar?", "Salvar Cliente", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation, MessageBoxDefaultButton.Button2);
             if (confirm.ToString().ToUpper() == "YES")
             {
-                string cmd = "INSERT INTO ordem_cliente VALUES(NULL,'" + TXTcliente.Text + "','" + CBBsetor.Text + "');";
+                string cliente = TXTcliente.Text.Trim();
+
+                string cmd = "INSERT INTO ordem_cliente VALUES(NULL,'" + cliente + "','" + CBBsetor.Text + "');";
                 CG.ExecutarComandoSql(cmd);
                 TXTcliente.Clear();
                 CBBsetor.SelectedIndex = 0;
             }
-        }    
+        }
 
 
         //Form
@@ -83,7 +85,7 @@ namespace ordem_de_servico
         {
             try
             {
-                if (TXTcliente.Text != "")
+                if (TXTcliente.Text.Trim() != "")
                 {
                     if (CBBsetor.Text != "Escolha um setor")
                     {

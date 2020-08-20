@@ -74,10 +74,11 @@
             // 
             this.CBBcliente.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.CBBcliente.FormattingEnabled = true;
+            this.CBBcliente.ItemHeight = 13;
             this.CBBcliente.Location = new System.Drawing.Point(66, 36);
             this.CBBcliente.Name = "CBBcliente";
             this.CBBcliente.Size = new System.Drawing.Size(168, 21);
-            this.CBBcliente.TabIndex = 3;
+            this.CBBcliente.TabIndex = 2;
             this.CBBcliente.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
             // CBBprioridade
@@ -87,7 +88,7 @@
             this.CBBprioridade.Location = new System.Drawing.Point(143, 33);
             this.CBBprioridade.Name = "CBBprioridade";
             this.CBBprioridade.Size = new System.Drawing.Size(102, 21);
-            this.CBBprioridade.TabIndex = 5;
+            this.CBBprioridade.TabIndex = 2;
             // 
             // label3
             // 
@@ -104,7 +105,7 @@
             this.TXTdescricao.Multiline = true;
             this.TXTdescricao.Name = "TXTdescricao";
             this.TXTdescricao.Size = new System.Drawing.Size(370, 127);
-            this.TXTdescricao.TabIndex = 6;
+            this.TXTdescricao.TabIndex = 5;
             // 
             // CBBusuario
             // 
@@ -113,7 +114,7 @@
             this.CBBusuario.Location = new System.Drawing.Point(6, 33);
             this.CBBusuario.Name = "CBBusuario";
             this.CBBusuario.Size = new System.Drawing.Size(131, 21);
-            this.CBBusuario.TabIndex = 7;
+            this.CBBusuario.TabIndex = 1;
             // 
             // label4
             // 
@@ -129,7 +130,7 @@
             this.TXTtitulo.Location = new System.Drawing.Point(6, 73);
             this.TXTtitulo.Name = "TXTtitulo";
             this.TXTtitulo.Size = new System.Drawing.Size(370, 20);
-            this.TXTtitulo.TabIndex = 9;
+            this.TXTtitulo.TabIndex = 4;
             // 
             // label5
             // 
@@ -147,7 +148,7 @@
             this.TXTsetor.Name = "TXTsetor";
             this.TXTsetor.ReadOnly = true;
             this.TXTsetor.Size = new System.Drawing.Size(136, 20);
-            this.TXTsetor.TabIndex = 11;
+            this.TXTsetor.TabIndex = 3;
             // 
             // label6
             // 
@@ -169,7 +170,7 @@
             this.groupBox1.Location = new System.Drawing.Point(12, 12);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(382, 65);
-            this.groupBox1.TabIndex = 13;
+            this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Info Cliente";
             // 
@@ -180,7 +181,7 @@
             this.TXTcodigo.Name = "TXTcodigo";
             this.TXTcodigo.ReadOnly = true;
             this.TXTcodigo.Size = new System.Drawing.Size(54, 20);
-            this.TXTcodigo.TabIndex = 14;
+            this.TXTcodigo.TabIndex = 1;
             // 
             // label8
             // 
@@ -215,7 +216,7 @@
             this.groupBox2.Location = new System.Drawing.Point(12, 83);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(382, 249);
-            this.groupBox2.TabIndex = 15;
+            this.groupBox2.TabIndex = 2;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Dados";
             // 
@@ -224,7 +225,7 @@
             this.DTPnovaOrdem.Location = new System.Drawing.Point(251, 34);
             this.DTPnovaOrdem.Name = "DTPnovaOrdem";
             this.DTPnovaOrdem.Size = new System.Drawing.Size(125, 20);
-            this.DTPnovaOrdem.TabIndex = 15;
+            this.DTPnovaOrdem.TabIndex = 3;
             this.DTPnovaOrdem.Value = new System.DateTime(2020, 2, 14, 8, 44, 1, 0);
             // 
             // BTNsalvar
@@ -233,7 +234,7 @@
             this.BTNsalvar.Location = new System.Drawing.Point(12, 338);
             this.BTNsalvar.Name = "BTNsalvar";
             this.BTNsalvar.Size = new System.Drawing.Size(198, 32);
-            this.BTNsalvar.TabIndex = 16;
+            this.BTNsalvar.TabIndex = 3;
             this.BTNsalvar.Text = "Salvar";
             this.BTNsalvar.UseVisualStyleBackColor = false;
             this.BTNsalvar.Click += new System.EventHandler(this.BTNsalvar_Click);
@@ -244,7 +245,7 @@
             this.BTNlimpar.Location = new System.Drawing.Point(216, 338);
             this.BTNlimpar.Name = "BTNlimpar";
             this.BTNlimpar.Size = new System.Drawing.Size(178, 32);
-            this.BTNlimpar.TabIndex = 17;
+            this.BTNlimpar.TabIndex = 4;
             this.BTNlimpar.Text = "Limpar";
             this.BTNlimpar.UseVisualStyleBackColor = false;
             this.BTNlimpar.Click += new System.EventHandler(this.BTNlimpar_Click);

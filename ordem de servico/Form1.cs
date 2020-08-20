@@ -74,7 +74,7 @@ namespace ordem_de_servico
             cbbUsuario.SelectedIndex = 0;
             #endregion             
 
-            cbxAberto.Checked = true;
+            RDBaberto.Checked = true;
 
             atualizarform();
             CarregarDadosComboBox();
@@ -112,19 +112,9 @@ namespace ordem_de_servico
 
         }
 
-        /* Teste GitHub Controle de verção
-         * 
-         * 27/02 - 08:34
-         * 
-         *  Teste 03
-         *  
-         *  Ajudante-01
-         * 
-         * 
-         * 
-         * 
-         * Master
-         * 
-         */
+        private void btnPesquisar_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

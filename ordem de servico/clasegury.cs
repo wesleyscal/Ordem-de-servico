@@ -14,7 +14,7 @@ namespace ordem_de_servico
 {
     class clasegury
     {
-        private const string Banco = "bancoteste";
+        private const string Banco = "ods_teste";
 
         private const string V = "server=localhost;port=3306;User id=root;database=" + Banco + ";password=Pa$$w0rd;CharSet=utf8";
         public MySqlCommand myCMD = new MySqlCommand();
