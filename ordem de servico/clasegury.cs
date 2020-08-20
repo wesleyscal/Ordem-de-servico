@@ -12,7 +12,7 @@ using System.Drawing;
 
 namespace ordem_de_servico
 {
-    class clasegury
+    public class clasegury
     {
         private const string Banco = "ods_teste";
 
@@ -193,6 +193,16 @@ namespace ordem_de_servico
         }
 
         #endregion
+
+        #region Variaveis Publicas
+
+        public static string DataInicial = "D.I";
+        public static string DataFinal = "D.F";
+
+
+        #endregion
+
+
 
     }
 }

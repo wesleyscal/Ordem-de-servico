@@ -30,6 +30,9 @@
         {
             this.dgvOrdem = new System.Windows.Forms.DataGridView();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.RDBfinalizado = new System.Windows.Forms.RadioButton();
+            this.RDBandamento = new System.Windows.Forms.RadioButton();
+            this.RDBaberto = new System.Windows.Forms.RadioButton();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -43,9 +46,7 @@
             this.btnNovaOrdem = new System.Windows.Forms.Button();
             this.btnCliente = new System.Windows.Forms.Button();
             this.textBox1 = new System.Windows.Forms.TextBox();
-            this.RDBaberto = new System.Windows.Forms.RadioButton();
-            this.RDBandamento = new System.Windows.Forms.RadioButton();
-            this.RDBfinalizado = new System.Windows.Forms.RadioButton();
+            this.btnData = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvOrdem)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -80,6 +81,39 @@
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Pesquisa";
+            // 
+            // RDBfinalizado
+            // 
+            this.RDBfinalizado.AutoSize = true;
+            this.RDBfinalizado.Location = new System.Drawing.Point(559, 54);
+            this.RDBfinalizado.Name = "RDBfinalizado";
+            this.RDBfinalizado.Size = new System.Drawing.Size(72, 17);
+            this.RDBfinalizado.TabIndex = 14;
+            this.RDBfinalizado.TabStop = true;
+            this.RDBfinalizado.Text = "Finalizado";
+            this.RDBfinalizado.UseVisualStyleBackColor = true;
+            // 
+            // RDBandamento
+            // 
+            this.RDBandamento.AutoSize = true;
+            this.RDBandamento.Location = new System.Drawing.Point(559, 33);
+            this.RDBandamento.Name = "RDBandamento";
+            this.RDBandamento.Size = new System.Drawing.Size(79, 17);
+            this.RDBandamento.TabIndex = 13;
+            this.RDBandamento.TabStop = true;
+            this.RDBandamento.Text = "Andamento";
+            this.RDBandamento.UseVisualStyleBackColor = true;
+            // 
+            // RDBaberto
+            // 
+            this.RDBaberto.AutoSize = true;
+            this.RDBaberto.Location = new System.Drawing.Point(559, 13);
+            this.RDBaberto.Name = "RDBaberto";
+            this.RDBaberto.Size = new System.Drawing.Size(56, 17);
+            this.RDBaberto.TabIndex = 12;
+            this.RDBaberto.TabStop = true;
+            this.RDBaberto.Text = "Aberto";
+            this.RDBaberto.UseVisualStyleBackColor = true;
             // 
             // label4
             // 
@@ -168,7 +202,6 @@
             this.txtDatafinal.Size = new System.Drawing.Size(100, 20);
             this.txtDatafinal.TabIndex = 1;
             this.txtDatafinal.ValidatingType = typeof(System.DateTime);
-            this.txtDatafinal.Click += new System.EventHandler(this.txtDatafinal_Click);
             // 
             // txtDataInicial
             // 
@@ -178,7 +211,6 @@
             this.txtDataInicial.Size = new System.Drawing.Size(100, 20);
             this.txtDataInicial.TabIndex = 0;
             this.txtDataInicial.ValidatingType = typeof(System.DateTime);
-            this.txtDataInicial.Click += new System.EventHandler(this.txtDataInicial_Click);
             // 
             // btnNovaOrdem
             // 
@@ -212,38 +244,16 @@
             this.textBox1.TabIndex = 4;
             this.textBox1.Text = " || F2 - Atualizar ||";
             // 
-            // RDBaberto
+            // btnData
             // 
-            this.RDBaberto.AutoSize = true;
-            this.RDBaberto.Location = new System.Drawing.Point(559, 13);
-            this.RDBaberto.Name = "RDBaberto";
-            this.RDBaberto.Size = new System.Drawing.Size(56, 17);
-            this.RDBaberto.TabIndex = 12;
-            this.RDBaberto.TabStop = true;
-            this.RDBaberto.Text = "Aberto";
-            this.RDBaberto.UseVisualStyleBackColor = true;
-            // 
-            // RDBandamento
-            // 
-            this.RDBandamento.AutoSize = true;
-            this.RDBandamento.Location = new System.Drawing.Point(559, 33);
-            this.RDBandamento.Name = "RDBandamento";
-            this.RDBandamento.Size = new System.Drawing.Size(79, 17);
-            this.RDBandamento.TabIndex = 13;
-            this.RDBandamento.TabStop = true;
-            this.RDBandamento.Text = "Andamento";
-            this.RDBandamento.UseVisualStyleBackColor = true;
-            // 
-            // RDBfinalizado
-            // 
-            this.RDBfinalizado.AutoSize = true;
-            this.RDBfinalizado.Location = new System.Drawing.Point(559, 54);
-            this.RDBfinalizado.Name = "RDBfinalizado";
-            this.RDBfinalizado.Size = new System.Drawing.Size(72, 17);
-            this.RDBfinalizado.TabIndex = 14;
-            this.RDBfinalizado.TabStop = true;
-            this.RDBfinalizado.Text = "Finalizado";
-            this.RDBfinalizado.UseVisualStyleBackColor = true;
+            this.btnData.BackColor = System.Drawing.Color.SkyBlue;
+            this.btnData.Location = new System.Drawing.Point(72, 134);
+            this.btnData.Name = "btnData";
+            this.btnData.Size = new System.Drawing.Size(117, 57);
+            this.btnData.TabIndex = 15;
+            this.btnData.Text = "Data";
+            this.btnData.UseVisualStyleBackColor = false;
+            this.btnData.Click += new System.EventHandler(this.btnData_Click);
             // 
             // Form1
             // 
@@ -251,6 +261,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Gray;
             this.ClientSize = new System.Drawing.Size(784, 572);
+            this.Controls.Add(this.btnData);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.btnCliente);
             this.Controls.Add(this.btnNovaOrdem);
@@ -291,6 +302,7 @@
         private System.Windows.Forms.RadioButton RDBfinalizado;
         private System.Windows.Forms.RadioButton RDBandamento;
         private System.Windows.Forms.RadioButton RDBaberto;
+        private System.Windows.Forms.Button btnData;
     }
 }
 

@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Runtime.Remoting;
+using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -66,6 +67,8 @@ namespace ordem_de_servico
         private void Form1_Load(object sender, EventArgs e)
         {
 
+            
+
             #region Combobox
             cbbCliente.Items.Add("Escolha Um Cliente");
             cbbCliente.SelectedIndex = 0;
@@ -99,22 +102,15 @@ namespace ordem_de_servico
             Clientes frm = new Clientes();
             frm.ShowDialog();
         }
-
-        //TextBox
-        private void txtDataInicial_Click(object sender, EventArgs e)
-        {
-            txtDataInicial.Select(0, 0);
-
-        }
-        private void txtDatafinal_Click(object sender, EventArgs e)
-        {
-            txtDatafinal.Select(0, 0);
-
-        }
-
         private void btnPesquisar_Click(object sender, EventArgs e)
         {
+            MessageBox.Show(clasegury.DataInicial + clasegury.DataFinal);
+        }
 
+        private void btnData_Click(object sender, EventArgs e)
+        {
+            data form = new data();
+            form.Show();
         }
     }
 }
