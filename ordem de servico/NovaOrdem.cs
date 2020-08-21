@@ -1,23 +1,17 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace ordem_de_servico
 {
-
     public partial class NovaOrdem : Form
     {
         public NovaOrdem()
         {
             InitializeComponent();
         }
-        clasegury CG = new clasegury();
+
+        private clasegury CG = new clasegury();
 
         //Metados
         private void CarregarDadosComboBox()
@@ -49,6 +43,7 @@ namespace ordem_de_servico
                 CBBcliente.Items.Add(Cliente);
             }
         }
+
         private void CarregarInformacoesClienteSelecaoComboBox()
         {
             //Limpam os dados anteriores
@@ -74,8 +69,8 @@ namespace ordem_de_servico
 
             TXTcodigo.Text = Codigo;
             TXTsetor.Text = Setor;
-
         }
+
         private void CarregarUsuarios()
         {
             CBBusuario.Items.Add("Escolha Um Usuario");
@@ -84,6 +79,7 @@ namespace ordem_de_servico
 
             CBBusuario.SelectedIndex = 0;
         }
+
         private void CarregarPrioridade()
         {
             CBBprioridade.Items.Add("Escolha a prioridade");
@@ -94,6 +90,7 @@ namespace ordem_de_servico
 
             CBBprioridade.SelectedIndex = 0;
         }
+
         private void SalvarOrdem()
         {
             //Validações
@@ -140,6 +137,7 @@ namespace ordem_de_servico
                 LimparTela();
             }
         }
+
         private void LimparTela()
         {
             TXTcodigo.Clear();
@@ -162,7 +160,6 @@ namespace ordem_de_servico
                 CarregarUsuarios();
                 CarregarPrioridade();
                 CBBcliente.Select();
-
             }
             catch (Exception ex)
             {
@@ -190,6 +187,7 @@ namespace ordem_de_servico
         {
             LimparTela();
         }
+
         private void BTNsalvar_Click(object sender, EventArgs e)
         {
             try

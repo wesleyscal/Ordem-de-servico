@@ -1,15 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Runtime.Remoting;
-using System.Security.Cryptography.X509Certificates;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Windows.Forms.Layout;
 
 namespace ordem_de_servico
 {
@@ -20,7 +11,7 @@ namespace ordem_de_servico
             InitializeComponent();
         }
 
-        clasegury CG = new clasegury();
+        private clasegury CG = new clasegury();
 
         //Metodos
         private void atualizarform()
@@ -29,8 +20,8 @@ namespace ordem_de_servico
             CG.ExecutarComandoSql(cmd);
             CG.ExibirDGV(dgvOrdem);
             CG.FormatarDGV(dgvOrdem);
-
         }
+
         private void CarregarDadosComboBox()
         {
             //Declara um DataTable
@@ -60,29 +51,27 @@ namespace ordem_de_servico
             //Usuario
             cbbUsuario.Items.Add("Lucas");
             cbbUsuario.Items.Add("Wesley gury");
-
         }
 
         //form
         private void Form1_Load(object sender, EventArgs e)
         {
-
-            
-
             #region Combobox
+
             cbbCliente.Items.Add("Escolha Um Cliente");
             cbbCliente.SelectedIndex = 0;
 
             cbbUsuario.Items.Add("Escolha Um Usuario");
             cbbUsuario.SelectedIndex = 0;
-            #endregion             
+
+            #endregion Combobox
 
             RDBaberto.Checked = true;
 
             atualizarform();
             CarregarDadosComboBox();
-
         }
+
         private void Form1_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.F2)
@@ -97,11 +86,13 @@ namespace ordem_de_servico
             NovaOrdem frm = new NovaOrdem();
             frm.ShowDialog();
         }
+
         private void btnCliente_Click(object sender, EventArgs e)
         {
             Clientes frm = new Clientes();
             frm.ShowDialog();
         }
+
         private void btnPesquisar_Click(object sender, EventArgs e)
         {
             MessageBox.Show(clasegury.DataInicial + clasegury.DataFinal);

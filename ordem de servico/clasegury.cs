@@ -1,14 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using MySql.Data.MySqlClient;
+using System;
 using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using MySql.Data.MySqlClient;
-using System.Windows.Forms;
-using System.Diagnostics;
-using System.Threading;
 using System.Drawing;
+using System.Windows.Forms;
 
 namespace ordem_de_servico
 {
@@ -31,7 +25,6 @@ namespace ordem_de_servico
             string ConnString = V;
             conectarbanco.ConnectionString = ConnString;
             conectarbanco.Open();
-
         }
 
         //Executa comando no MySql
@@ -45,7 +38,6 @@ namespace ordem_de_servico
             myCMD.ExecuteNonQuery();
 
             conectarbanco.Close();
-
         }
 
         //retorna valores do sql
@@ -73,14 +65,13 @@ namespace ordem_de_servico
             adp.Fill(dt);
         }
 
-        #endregion
+        #endregion Banco de dados
 
         #region DataGridView
 
         //Exibe dados no DataGreedView
         public void ExibirDGV(DataGridView dgv)
         {
-
             //Instanciar um novo DataTable (Objeto que receberão as infonrmações do banco SQL)
             DataTable dt = new DataTable();
 
@@ -92,7 +83,6 @@ namespace ordem_de_servico
 
             //Exibe os dados no DataGridView usando como fonte de dados o DataTable (dt)
             dgv.DataSource = dt;
-
         }
 
         //Formatar DataGridView
@@ -118,7 +108,7 @@ namespace ordem_de_servico
             dgv.AlternatingRowsDefaultCellStyle.BackColor = Color.WhiteSmoke;
         }
 
-        #endregion
+        #endregion DataGridView
 
         #region Formatar
 
@@ -192,21 +182,13 @@ namespace ordem_de_servico
             DTP.CustomFormat = "dd/MM/yyyy HH:mm:ss";
         }
 
-        #endregion
+        #endregion Formatar
 
         #region Variaveis Publicas
 
         public static string DataInicial = "D.I";
         public static string DataFinal = "D.F";
 
-
-        #endregion
-
-
-
+        #endregion Variaveis Publicas
     }
 }
-
-
-
-

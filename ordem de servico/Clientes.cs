@@ -1,18 +1,11 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace ordem_de_servico
 {
     public partial class Clientes : Form
     {
-        clasegury CG = new clasegury();
+        private clasegury CG = new clasegury();
 
         public Clientes()
         {
@@ -37,18 +30,16 @@ namespace ordem_de_servico
             CBBsetor.Items.Add("Refeitorio");
             CBBsetor.Items.Add("Manutenção");
             CBBsetor.SelectedIndex = 0;
-
         }
+
         private void AtualizarDGV()
         {
-
             string cmd = "SELECT * FROM ordem_cliente;";
             CG.ExecutarComandoSql(cmd);
             CG.ExibirDGV(DGVcliente);
             CG.FormatarDGV(DGVcliente);
-
-
         }
+
         private void SalvarProduto()
         {
             DialogResult confirm = MessageBox.Show("Deseja Continuar?", "Salvar Cliente", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation, MessageBoxDefaultButton.Button2);
@@ -63,17 +54,13 @@ namespace ordem_de_servico
             }
         }
 
-
         //Form
         private void Clientes_Load(object sender, EventArgs e)
         {
-
             Setores();
 
             AtualizarDGV();
-
         }
-
 
         //Botão
         private void BTNlimpar_Click(object sender, EventArgs e)
@@ -81,6 +68,7 @@ namespace ordem_de_servico
             TXTcliente.Clear();
             CBBsetor.SelectedIndex = 0;
         }
+
         private void BTNsalvar_Click(object sender, EventArgs e)
         {
             try
@@ -109,7 +97,5 @@ namespace ordem_de_servico
                 return;
             }
         }
-
-
     }
 }
