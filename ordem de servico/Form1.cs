@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Data;
+using System.Security.Cryptography.X509Certificates;
 using System.Windows.Forms;
 
 namespace ordem_de_servico
@@ -53,15 +54,20 @@ namespace ordem_de_servico
             cbbUsuario.Items.Add("Wesley gury");
         }
 
+        public void AlterarNomeBotaoData()
+        {
+            btnData.Text = clasegury.DataInicial + "\n Até \n" + clasegury.DataFinal;
+        }
+
         //form
         private void Form1_Load(object sender, EventArgs e)
         {
             #region Combobox
 
-            cbbCliente.Items.Add("Escolha Um Cliente");
+            cbbCliente.Items.Add("Todos os Cliente");
             cbbCliente.SelectedIndex = 0;
 
-            cbbUsuario.Items.Add("Escolha Um Usuario");
+            cbbUsuario.Items.Add("Todos os Usuario");
             cbbUsuario.SelectedIndex = 0;
 
             #endregion Combobox
@@ -100,8 +106,9 @@ namespace ordem_de_servico
 
         private void btnData_Click(object sender, EventArgs e)
         {
-            data form = new data();
-            form.Show();
+            data Fdat = new data();
+            Fdat.ShowDialog(this);
+            AlterarNomeBotaoData();
         }
     }
 }

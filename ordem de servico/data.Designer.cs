@@ -34,7 +34,7 @@
             this.LB = new System.Windows.Forms.Label();
             this.txtDatafinal = new System.Windows.Forms.MaskedTextBox();
             this.txtDataInicial = new System.Windows.Forms.MaskedTextBox();
-            this.btnData = new System.Windows.Forms.Button();
+            this.btnSalvar = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -99,16 +99,16 @@
             this.txtDataInicial.TabIndex = 0;
             this.txtDataInicial.ValidatingType = typeof(System.DateTime);
             // 
-            // btnData
+            // btnSalvar
             // 
-            this.btnData.BackColor = System.Drawing.Color.SkyBlue;
-            this.btnData.Location = new System.Drawing.Point(12, 97);
-            this.btnData.Name = "btnData";
-            this.btnData.Size = new System.Drawing.Size(253, 60);
-            this.btnData.TabIndex = 16;
-            this.btnData.Text = "Data";
-            this.btnData.UseVisualStyleBackColor = false;
-            this.btnData.Click += new System.EventHandler(this.btnData_Click);
+            this.btnSalvar.BackColor = System.Drawing.Color.SkyBlue;
+            this.btnSalvar.Location = new System.Drawing.Point(12, 97);
+            this.btnSalvar.Name = "btnSalvar";
+            this.btnSalvar.Size = new System.Drawing.Size(253, 60);
+            this.btnSalvar.TabIndex = 16;
+            this.btnSalvar.Text = "Salvar";
+            this.btnSalvar.UseVisualStyleBackColor = false;
+            this.btnSalvar.Click += new System.EventHandler(this.btnSalvar_Click);
             // 
             // data
             // 
@@ -116,7 +116,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Gray;
             this.ClientSize = new System.Drawing.Size(277, 158);
-            this.Controls.Add(this.btnData);
+            this.Controls.Add(this.btnSalvar);
             this.Controls.Add(this.groupBox1);
             this.Name = "data";
             this.Text = "data";
@@ -134,6 +134,6 @@
         private System.Windows.Forms.Label LB;
         private System.Windows.Forms.MaskedTextBox txtDatafinal;
         private System.Windows.Forms.MaskedTextBox txtDataInicial;
-        private System.Windows.Forms.Button btnData;
+        private System.Windows.Forms.Button btnSalvar;
     }
 }

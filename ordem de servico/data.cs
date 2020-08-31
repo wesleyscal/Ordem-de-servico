@@ -12,11 +12,12 @@ namespace ordem_de_servico
             InitializeComponent();
         }
 
-        private void btnData_Click(object sender, EventArgs e)
+        private void btnSalvar_Click(object sender, EventArgs e)
         {
             clasegury.DataInicial = txtDataInicial.Text;
 
             clasegury.DataFinal = txtDatafinal.Text;
+
             Close();
         }
     }

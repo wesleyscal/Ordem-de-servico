@@ -241,7 +241,7 @@
         private System.Windows.Forms.RadioButton RDBfinalizado;
         private System.Windows.Forms.RadioButton RDBandamento;
         private System.Windows.Forms.RadioButton RDBaberto;
-        private System.Windows.Forms.Button btnData;
+        public System.Windows.Forms.Button btnData;
     }
 }
 
