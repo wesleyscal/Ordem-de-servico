@@ -108,7 +108,14 @@ namespace ordem_de_servico
         {
             data Fdat = new data();
             Fdat.ShowDialog(this);
-            AlterarNomeBotaoData();
+            if (clasegury.DataFinal != "" && clasegury.DataInicial != "")
+            {
+                AlterarNomeBotaoData();
+            }
+            else
+            {
+                btnData.Text = "Data";
+            }
         }
     }
 }

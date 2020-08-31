@@ -120,6 +120,7 @@
             this.Controls.Add(this.groupBox1);
             this.Name = "data";
             this.Text = "data";
+            this.Load += new System.EventHandler(this.data_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.ResumeLayout(false);

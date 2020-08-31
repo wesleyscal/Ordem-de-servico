@@ -87,7 +87,7 @@
             // RDBfinalizado
             // 
             this.RDBfinalizado.AutoSize = true;
-            this.RDBfinalizado.Location = new System.Drawing.Point(436, 56);
+            this.RDBfinalizado.Location = new System.Drawing.Point(516, 56);
             this.RDBfinalizado.Name = "RDBfinalizado";
             this.RDBfinalizado.Size = new System.Drawing.Size(72, 17);
             this.RDBfinalizado.TabIndex = 14;
@@ -98,7 +98,7 @@
             // RDBandamento
             // 
             this.RDBandamento.AutoSize = true;
-            this.RDBandamento.Location = new System.Drawing.Point(436, 35);
+            this.RDBandamento.Location = new System.Drawing.Point(516, 35);
             this.RDBandamento.Name = "RDBandamento";
             this.RDBandamento.Size = new System.Drawing.Size(79, 17);
             this.RDBandamento.TabIndex = 13;
@@ -109,7 +109,7 @@
             // RDBaberto
             // 
             this.RDBaberto.AutoSize = true;
-            this.RDBaberto.Location = new System.Drawing.Point(436, 15);
+            this.RDBaberto.Location = new System.Drawing.Point(516, 12);
             this.RDBaberto.Name = "RDBaberto";
             this.RDBaberto.Size = new System.Drawing.Size(56, 17);
             this.RDBaberto.TabIndex = 12;
@@ -120,7 +120,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(306, 38);
+            this.label4.Location = new System.Drawing.Point(346, 37);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(43, 13);
             this.label4.TabIndex = 11;
@@ -129,7 +129,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(126, 38);
+            this.label3.Location = new System.Drawing.Point(129, 38);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(39, 13);
             this.label3.TabIndex = 10;
@@ -138,9 +138,9 @@
             // btnPesquisar
             // 
             this.btnPesquisar.BackColor = System.Drawing.Color.SkyBlue;
-            this.btnPesquisar.Location = new System.Drawing.Point(619, 16);
+            this.btnPesquisar.Location = new System.Drawing.Point(601, 16);
             this.btnPesquisar.Name = "btnPesquisar";
-            this.btnPesquisar.Size = new System.Drawing.Size(117, 57);
+            this.btnPesquisar.Size = new System.Drawing.Size(153, 57);
             this.btnPesquisar.TabIndex = 4;
             this.btnPesquisar.Text = "Pesquisar";
             this.btnPesquisar.UseVisualStyleBackColor = false;
@@ -152,7 +152,7 @@
             this.cbbCliente.FormattingEnabled = true;
             this.cbbCliente.Location = new System.Drawing.Point(129, 52);
             this.cbbCliente.Name = "cbbCliente";
-            this.cbbCliente.Size = new System.Drawing.Size(174, 21);
+            this.cbbCliente.Size = new System.Drawing.Size(214, 21);
             this.cbbCliente.TabIndex = 4;
             // 
             // cbbUsuario
@@ -163,9 +163,9 @@
             this.cbbUsuario.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbbUsuario.FormattingEnabled = true;
             this.cbbUsuario.IntegralHeight = false;
-            this.cbbUsuario.Location = new System.Drawing.Point(309, 52);
+            this.cbbUsuario.Location = new System.Drawing.Point(349, 52);
             this.cbbUsuario.Name = "cbbUsuario";
-            this.cbbUsuario.Size = new System.Drawing.Size(121, 21);
+            this.cbbUsuario.Size = new System.Drawing.Size(161, 21);
             this.cbbUsuario.TabIndex = 3;
             // 
             // btnNovaOrdem
