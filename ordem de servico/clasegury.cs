@@ -186,8 +186,8 @@ namespace ordem_de_servico
 
         #region Variaveis Publicas
 
-        public static string DataInicial = "D.I";
-        public static string DataFinal = "D.F";
+        public static string DataInicial = "";
+        public static string DataFinal = "";
 
         #endregion Variaveis Publicas
     }

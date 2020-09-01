@@ -31,7 +31,7 @@ namespace ordem_de_servico
             }
             else
             {
-                MessageBox.Show("Por Favor Infome Data Valida");
+                MessageBox.Show("Por favor infome uma data valida");
             }
         }
     }

@@ -25,6 +25,15 @@ namespace ordem_de_servico
 
         private void CarregarDadosComboBox()
         {
+            cbbUsuario.Items.Clear();
+            cbbCliente.Items.Clear();
+
+            cbbCliente.Items.Add("Todos os Cliente");
+            cbbCliente.SelectedIndex = 0;
+
+            cbbUsuario.Items.Add("Todos os Usuario");
+            cbbUsuario.SelectedIndex = 0;
+
             //Declara um DataTable
             DataTable dt;
 
@@ -62,16 +71,6 @@ namespace ordem_de_servico
         //form
         private void Form1_Load(object sender, EventArgs e)
         {
-            #region Combobox
-
-            cbbCliente.Items.Add("Todos os Cliente");
-            cbbCliente.SelectedIndex = 0;
-
-            cbbUsuario.Items.Add("Todos os Usuario");
-            cbbUsuario.SelectedIndex = 0;
-
-            #endregion Combobox
-
             RDBaberto.Checked = true;
 
             atualizarform();
@@ -97,11 +96,7 @@ namespace ordem_de_servico
         {
             Clientes frm = new Clientes();
             frm.ShowDialog();
-        }
-
-        private void btnPesquisar_Click(object sender, EventArgs e)
-        {
-            MessageBox.Show(clasegury.DataInicial + clasegury.DataFinal);
+            CarregarDadosComboBox();
         }
 
         private void btnData_Click(object sender, EventArgs e)
@@ -116,6 +111,86 @@ namespace ordem_de_servico
             {
                 btnData.Text = "Data";
             }
+        }
+
+        private void btnPesquisar_Click(object sender, EventArgs e)
+        {
+            //variaveis
+            string Data_Inicial = "";
+            string Data_Final = "";
+            string Cliente = "";
+            string Usuario = "";
+            string Estado = "";
+
+            //Atribuir valor a Condição
+            if (clasegury.DataInicial == "" && clasegury.DataFinal == "")
+            {
+                Data_Inicial = "1000-01-01 00:00:00";
+                Data_Final = "4000-01-01 00:00:00";
+            }
+            else
+            {
+                Data_Inicial = CG.DataMySQL(clasegury.DataInicial) + " 00:00:00";
+                Data_Final = CG.DataMySQL(clasegury.DataFinal) + " 23:59:59";
+            }
+            if (cbbCliente.Text == "Todos os Cliente")
+            {
+                Cliente = "%%";
+            }
+            else
+            {
+                Cliente = cbbCliente.Text;
+            }
+            if (cbbUsuario.Text == "Todos os Usuario")
+            {
+                Usuario = "%%";
+            }
+            else
+            {
+                Usuario = cbbUsuario.Text;
+            }
+            if (RDBaberto.Checked == true)
+            {
+                Estado = "Aberto";
+            }
+            else if (RDBandamento.Checked == true)
+            {
+                Estado = "Andamento";
+            }
+            else if (RDBfinalizado.Checked == true)
+            {
+                Estado = "Finalizado";
+            }
+            else
+            {
+                MessageBox.Show("Deu Ruim");
+            }
+
+            MessageBox.Show(Data_Final);
+            MessageBox.Show(Data_Inicial);
+
+            string cmd = "SELECT " +
+            "ordem_cliente.cliente 'Cliente'," +
+            "ordem_servico.titulo 'Título'," +
+            "ordem_servico.prioridade 'Prioridade'," +
+            "ordem_servico.estado 'Situação'," +
+            "ordem_servico.data_hora 'Data / Hora'" +
+            "FROM " +
+            "ordem_servico " +
+            "LEFT OUTER JOIN " +
+            "ordem_cliente ON (ordem_servico.id_cliente = ordem_cliente.id) " +
+            "WHERE " +
+            "ordem_servico.data_hora BETWEEN '" + Data_Inicial + "' AND '" + Data_Final + "' " +
+            "and " +
+            "cliente like '" + Cliente + "' " +
+            "and " +
+            "usuario like '" + Usuario + "' " +
+            "and " +
+            "estado = '" + Estado + "';";
+
+            CG.ExecutarComandoSql(cmd);
+            CG.ExibirDGV(dgvOrdem);
+            CG.FormatarDGV(dgvOrdem);
         }
     }
 }

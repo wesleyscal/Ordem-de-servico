@@ -97,5 +97,10 @@ namespace ordem_de_servico
                 return;
             }
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            //DELETE FROM `ods_teste`.`ordem_cliente` WHERE (`id` = '13');
+        }
     }
 }
