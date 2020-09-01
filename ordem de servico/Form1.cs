@@ -90,6 +90,7 @@ namespace ordem_de_servico
         {
             NovaOrdem frm = new NovaOrdem();
             frm.ShowDialog();
+            atualizarform();
         }
 
         private void btnCliente_Click(object sender, EventArgs e)
