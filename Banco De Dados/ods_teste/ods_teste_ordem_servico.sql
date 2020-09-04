@@ -29,8 +29,9 @@ CREATE TABLE `ordem_servico` (
   `prioridade` varchar(200) NOT NULL,
   `data_hora` datetime NOT NULL,
   `titulo` varchar(200) NOT NULL,
-  `descricao` varchar(2000) NOT NULL,
+  `descricao` varchar(5000) NOT NULL,
   `estado` varchar(200) NOT NULL,
+  `observacao` varchar(5000),
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;

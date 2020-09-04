@@ -37,7 +37,7 @@
             this.BTNlimpar = new System.Windows.Forms.Button();
             this.CBBsetor = new System.Windows.Forms.ComboBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnExcluir = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.DGVcliente)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -82,7 +82,7 @@
             // BTNsalvar
             // 
             this.BTNsalvar.BackColor = System.Drawing.Color.SkyBlue;
-            this.BTNsalvar.Location = new System.Drawing.Point(193, 280);
+            this.BTNsalvar.Location = new System.Drawing.Point(116, 280);
             this.BTNsalvar.Name = "BTNsalvar";
             this.BTNsalvar.Size = new System.Drawing.Size(71, 38);
             this.BTNsalvar.TabIndex = 5;
@@ -123,16 +123,16 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Dados";
             // 
-            // button1
+            // btnExcluir
             // 
-            this.button1.BackColor = System.Drawing.Color.SkyBlue;
-            this.button1.Location = new System.Drawing.Point(116, 280);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(71, 38);
-            this.button1.TabIndex = 9;
-            this.button1.Text = "Excluir";
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.btnExcluir.BackColor = System.Drawing.Color.SkyBlue;
+            this.btnExcluir.Location = new System.Drawing.Point(193, 280);
+            this.btnExcluir.Name = "btnExcluir";
+            this.btnExcluir.Size = new System.Drawing.Size(71, 38);
+            this.btnExcluir.TabIndex = 9;
+            this.btnExcluir.Text = "Excluir";
+            this.btnExcluir.UseVisualStyleBackColor = false;
+            this.btnExcluir.Click += new System.EventHandler(this.btnExcluir_Click);
             // 
             // Clientes
             // 
@@ -140,7 +140,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Gray;
             this.ClientSize = new System.Drawing.Size(353, 323);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnExcluir);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.BTNlimpar);
             this.Controls.Add(this.BTNsalvar);
@@ -168,6 +168,6 @@
         private System.Windows.Forms.Button BTNlimpar;
         private System.Windows.Forms.ComboBox CBBsetor;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnExcluir;
     }
 }

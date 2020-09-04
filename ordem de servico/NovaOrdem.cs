@@ -131,7 +131,7 @@ namespace ordem_de_servico
                 string descricao = TXTdescricao.Text;
                 string estado = "Aberto";
 
-                string cmd = "insert into ordem_servico values(null," + id_cliente + ",'" + usuario + "','" + prioridade + "','" + data_hora + "','" + titulo + "','" + descricao + "','" + estado + "');";
+                string cmd = "insert into ordem_servico values(null," + id_cliente + ",'" + usuario + "','" + prioridade + "','" + data_hora + "','" + titulo + "','" + descricao + "','" + estado + "','');";
                 CG.ExecutarComandoSql(cmd);
 
                 LimparTela();

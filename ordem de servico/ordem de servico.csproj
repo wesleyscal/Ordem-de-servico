@@ -74,6 +74,12 @@
     <Compile Include="NovaOrdem.Designer.cs">
       <DependentUpon>NovaOrdem.cs</DependentUpon>
     </Compile>
+    <Compile Include="Ordem.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Ordem.Designer.cs">
+      <DependentUpon>Ordem.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Clientes.resx">
