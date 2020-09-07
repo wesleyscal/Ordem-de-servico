@@ -94,6 +94,9 @@
     <EmbeddedResource Include="NovaOrdem.resx">
       <DependentUpon>NovaOrdem.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Ordem.resx">
+      <DependentUpon>Ordem.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>

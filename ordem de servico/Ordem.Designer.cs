@@ -28,12 +28,339 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
+            this.BTNlimpar = new System.Windows.Forms.Button();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.cbbStatus = new System.Windows.Forms.ComboBox();
+            this.txtPrioridade = new System.Windows.Forms.TextBox();
+            this.txtUsuario = new System.Windows.Forms.TextBox();
+            this.TXTdescricao = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.TXTtitulo = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.TXTcodigo = new System.Windows.Forms.TextBox();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.txtCliente = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.TXTsetor = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.BTNsalvar = new System.Windows.Forms.Button();
+            this.label9 = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.btnObservacao = new System.Windows.Forms.Button();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.label10 = new System.Windows.Forms.Label();
+            this.groupBox2.SuspendLayout();
+            this.groupBox1.SuspendLayout();
+            this.SuspendLayout();
+            // 
+            // BTNlimpar
+            // 
+            this.BTNlimpar.BackColor = System.Drawing.Color.SkyBlue;
+            this.BTNlimpar.Location = new System.Drawing.Point(216, 335);
+            this.BTNlimpar.Name = "BTNlimpar";
+            this.BTNlimpar.Size = new System.Drawing.Size(178, 52);
+            this.BTNlimpar.TabIndex = 8;
+            this.BTNlimpar.Text = "Limpar";
+            this.BTNlimpar.UseVisualStyleBackColor = false;
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.textBox1);
+            this.groupBox2.Controls.Add(this.label9);
+            this.groupBox2.Controls.Add(this.cbbStatus);
+            this.groupBox2.Controls.Add(this.txtPrioridade);
+            this.groupBox2.Controls.Add(this.txtUsuario);
+            this.groupBox2.Controls.Add(this.TXTdescricao);
+            this.groupBox2.Controls.Add(this.label7);
+            this.groupBox2.Controls.Add(this.label5);
+            this.groupBox2.Controls.Add(this.label1);
+            this.groupBox2.Controls.Add(this.label3);
+            this.groupBox2.Controls.Add(this.TXTtitulo);
+            this.groupBox2.Controls.Add(this.label4);
+            this.groupBox2.Location = new System.Drawing.Point(12, 80);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(382, 249);
+            this.groupBox2.TabIndex = 6;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Dados";
+            // 
+            // cbbStatus
+            // 
+            this.cbbStatus.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.cbbStatus.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbbStatus.FormattingEnabled = true;
+            this.cbbStatus.Location = new System.Drawing.Point(251, 73);
+            this.cbbStatus.Name = "cbbStatus";
+            this.cbbStatus.Size = new System.Drawing.Size(125, 21);
+            this.cbbStatus.TabIndex = 17;
+            // 
+            // txtPrioridade
+            // 
+            this.txtPrioridade.BackColor = System.Drawing.Color.LightYellow;
+            this.txtPrioridade.Location = new System.Drawing.Point(127, 34);
+            this.txtPrioridade.Name = "txtPrioridade";
+            this.txtPrioridade.ReadOnly = true;
+            this.txtPrioridade.Size = new System.Drawing.Size(118, 20);
+            this.txtPrioridade.TabIndex = 16;
+            // 
+            // txtUsuario
+            // 
+            this.txtUsuario.BackColor = System.Drawing.Color.LightYellow;
+            this.txtUsuario.Location = new System.Drawing.Point(6, 34);
+            this.txtUsuario.Name = "txtUsuario";
+            this.txtUsuario.ReadOnly = true;
+            this.txtUsuario.Size = new System.Drawing.Size(115, 20);
+            this.txtUsuario.TabIndex = 15;
+            // 
+            // TXTdescricao
+            // 
+            this.TXTdescricao.BackColor = System.Drawing.SystemColors.Info;
+            this.TXTdescricao.Location = new System.Drawing.Point(6, 112);
+            this.TXTdescricao.Multiline = true;
+            this.TXTdescricao.Name = "TXTdescricao";
+            this.TXTdescricao.ReadOnly = true;
+            this.TXTdescricao.Size = new System.Drawing.Size(370, 127);
+            this.TXTdescricao.TabIndex = 5;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(251, 57);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(37, 13);
+            this.label7.TabIndex = 14;
+            this.label7.Text = "Status";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(3, 57);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(33, 13);
+            this.label5.TabIndex = 10;
+            this.label5.Text = "Titulo";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(6, 18);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(41, 13);
+            this.label1.TabIndex = 1;
+            this.label1.Text = "usuario";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(124, 18);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(54, 13);
+            this.label3.TabIndex = 4;
+            this.label3.Text = "Prioridade";
+            // 
+            // TXTtitulo
+            // 
+            this.TXTtitulo.BackColor = System.Drawing.SystemColors.Info;
+            this.TXTtitulo.Location = new System.Drawing.Point(6, 73);
+            this.TXTtitulo.Name = "TXTtitulo";
+            this.TXTtitulo.ReadOnly = true;
+            this.TXTtitulo.Size = new System.Drawing.Size(239, 20);
+            this.TXTtitulo.TabIndex = 4;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(3, 96);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(55, 13);
+            this.label4.TabIndex = 8;
+            this.label4.Text = "Descrição";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(3, 20);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(40, 13);
+            this.label8.TabIndex = 13;
+            this.label8.Text = "Codigo";
+            // 
+            // TXTcodigo
+            // 
+            this.TXTcodigo.BackColor = System.Drawing.Color.LightYellow;
+            this.TXTcodigo.Location = new System.Drawing.Point(6, 36);
+            this.TXTcodigo.Name = "TXTcodigo";
+            this.TXTcodigo.ReadOnly = true;
+            this.TXTcodigo.Size = new System.Drawing.Size(54, 20);
+            this.TXTcodigo.TabIndex = 1;
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.txtCliente);
+            this.groupBox1.Controls.Add(this.TXTcodigo);
+            this.groupBox1.Controls.Add(this.label8);
+            this.groupBox1.Controls.Add(this.label6);
+            this.groupBox1.Controls.Add(this.TXTsetor);
+            this.groupBox1.Controls.Add(this.label2);
+            this.groupBox1.Location = new System.Drawing.Point(12, 9);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(382, 65);
+            this.groupBox1.TabIndex = 5;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Info Cliente";
+            // 
+            // txtCliente
+            // 
+            this.txtCliente.BackColor = System.Drawing.Color.LightYellow;
+            this.txtCliente.Location = new System.Drawing.Point(66, 36);
+            this.txtCliente.Name = "txtCliente";
+            this.txtCliente.ReadOnly = true;
+            this.txtCliente.Size = new System.Drawing.Size(168, 20);
+            this.txtCliente.TabIndex = 14;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(237, 20);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(32, 13);
+            this.label6.TabIndex = 12;
+            this.label6.Text = "Setor";
+            // 
+            // TXTsetor
+            // 
+            this.TXTsetor.BackColor = System.Drawing.Color.LightYellow;
+            this.TXTsetor.Location = new System.Drawing.Point(240, 37);
+            this.TXTsetor.Name = "TXTsetor";
+            this.TXTsetor.ReadOnly = true;
+            this.TXTsetor.Size = new System.Drawing.Size(136, 20);
+            this.TXTsetor.TabIndex = 3;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(63, 20);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(39, 13);
+            this.label2.TabIndex = 2;
+            this.label2.Text = "Cliente";
+            // 
+            // BTNsalvar
+            // 
+            this.BTNsalvar.BackColor = System.Drawing.Color.SkyBlue;
+            this.BTNsalvar.Location = new System.Drawing.Point(12, 335);
+            this.BTNsalvar.Name = "BTNsalvar";
+            this.BTNsalvar.Size = new System.Drawing.Size(198, 52);
+            this.BTNsalvar.TabIndex = 7;
+            this.BTNsalvar.Text = "Salvar";
+            this.BTNsalvar.UseVisualStyleBackColor = false;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(248, 14);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(66, 13);
+            this.label9.TabIndex = 19;
+            this.label9.Text = "Data E Hora";
+            // 
+            // textBox1
+            // 
+            this.textBox1.BackColor = System.Drawing.Color.LightYellow;
+            this.textBox1.Location = new System.Drawing.Point(251, 34);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.ReadOnly = true;
+            this.textBox1.Size = new System.Drawing.Size(125, 20);
+            this.textBox1.TabIndex = 20;
+            // 
+            // btnObservacao
+            // 
+            this.btnObservacao.BackColor = System.Drawing.Color.SkyBlue;
+            this.btnObservacao.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnObservacao.Location = new System.Drawing.Point(394, 12);
+            this.btnObservacao.Name = "btnObservacao";
+            this.btnObservacao.Size = new System.Drawing.Size(24, 375);
+            this.btnObservacao.TabIndex = 9;
+            this.btnObservacao.Text = ">OBSERVAÇÃO>";
+            this.btnObservacao.UseVisualStyleBackColor = false;
+            this.btnObservacao.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // textBox2
+            // 
+            this.textBox2.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.textBox2.Location = new System.Drawing.Point(427, 29);
+            this.textBox2.Multiline = true;
+            this.textBox2.Name = "textBox2";
+            this.textBox2.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.textBox2.Size = new System.Drawing.Size(345, 358);
+            this.textBox2.TabIndex = 21;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(424, 12);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(65, 13);
+            this.label10.TabIndex = 15;
+            this.label10.Text = "Observação";
+            // 
+            // Ordem
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.BackColor = System.Drawing.Color.Gray;
+            this.ClientSize = new System.Drawing.Size(420, 399);
+            this.Controls.Add(this.label10);
+            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.btnObservacao);
+            this.Controls.Add(this.BTNlimpar);
+            this.Controls.Add(this.groupBox2);
+            this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.BTNsalvar);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
+            this.Name = "Ordem";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Ordem";
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
+            this.ResumeLayout(false);
+            this.PerformLayout();
+
         }
 
         #endregion
+
+        private System.Windows.Forms.Button BTNlimpar;
+        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.TextBox TXTdescricao;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.TextBox TXTtitulo;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.TextBox TXTcodigo;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.TextBox TXTsetor;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button BTNsalvar;
+        private System.Windows.Forms.TextBox txtCliente;
+        private System.Windows.Forms.ComboBox cbbStatus;
+        private System.Windows.Forms.TextBox txtPrioridade;
+        private System.Windows.Forms.TextBox txtUsuario;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Button btnObservacao;
+        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.Label label10;
     }
 }

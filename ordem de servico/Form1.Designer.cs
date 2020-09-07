@@ -53,6 +53,7 @@
             this.dgvOrdem.Name = "dgvOrdem";
             this.dgvOrdem.Size = new System.Drawing.Size(760, 403);
             this.dgvOrdem.TabIndex = 0;
+            this.dgvOrdem.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvOrdem_CellDoubleClick);
             // 
             // groupBox1
             // 

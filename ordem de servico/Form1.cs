@@ -193,5 +193,11 @@ namespace ordem_de_servico
             CG.ExibirDGV(dgvOrdem);
             CG.FormatarDGV(dgvOrdem);
         }
+
+        private void dgvOrdem_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            Ordem Form = new Ordem();
+            Form.ShowDialog();
+        }
     }
 }
