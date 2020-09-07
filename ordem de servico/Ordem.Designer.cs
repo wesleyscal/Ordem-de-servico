@@ -28,8 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.BTNlimpar = new System.Windows.Forms.Button();
+            this.btnObservacao = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.mtbDataHora = new System.Windows.Forms.MaskedTextBox();
+            this.label9 = new System.Windows.Forms.Label();
             this.cbbStatus = new System.Windows.Forms.ComboBox();
             this.txtPrioridade = new System.Windows.Forms.TextBox();
             this.txtUsuario = new System.Windows.Forms.TextBox();
@@ -47,29 +49,27 @@
             this.label6 = new System.Windows.Forms.Label();
             this.TXTsetor = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.BTNsalvar = new System.Windows.Forms.Button();
-            this.label9 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.btnObservacao = new System.Windows.Forms.Button();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.btnSalvar = new System.Windows.Forms.Button();
+            this.txtobservacao = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // BTNlimpar
+            // btnObservacao
             // 
-            this.BTNlimpar.BackColor = System.Drawing.Color.SkyBlue;
-            this.BTNlimpar.Location = new System.Drawing.Point(216, 335);
-            this.BTNlimpar.Name = "BTNlimpar";
-            this.BTNlimpar.Size = new System.Drawing.Size(178, 52);
-            this.BTNlimpar.TabIndex = 8;
-            this.BTNlimpar.Text = "Limpar";
-            this.BTNlimpar.UseVisualStyleBackColor = false;
+            this.btnObservacao.BackColor = System.Drawing.Color.SkyBlue;
+            this.btnObservacao.Location = new System.Drawing.Point(216, 335);
+            this.btnObservacao.Name = "btnObservacao";
+            this.btnObservacao.Size = new System.Drawing.Size(178, 52);
+            this.btnObservacao.TabIndex = 8;
+            this.btnObservacao.Text = "Abrir Observação";
+            this.btnObservacao.UseVisualStyleBackColor = false;
+            this.btnObservacao.Click += new System.EventHandler(this.btnObservacao_Click);
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.textBox1);
+            this.groupBox2.Controls.Add(this.mtbDataHora);
             this.groupBox2.Controls.Add(this.label9);
             this.groupBox2.Controls.Add(this.cbbStatus);
             this.groupBox2.Controls.Add(this.txtPrioridade);
@@ -87,6 +87,26 @@
             this.groupBox2.TabIndex = 6;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Dados";
+            // 
+            // mtbDataHora
+            // 
+            this.mtbDataHora.BackColor = System.Drawing.SystemColors.Info;
+            this.mtbDataHora.Location = new System.Drawing.Point(251, 34);
+            this.mtbDataHora.Mask = "00/00/0000 90:00";
+            this.mtbDataHora.Name = "mtbDataHora";
+            this.mtbDataHora.ReadOnly = true;
+            this.mtbDataHora.Size = new System.Drawing.Size(125, 20);
+            this.mtbDataHora.TabIndex = 20;
+            this.mtbDataHora.ValidatingType = typeof(System.DateTime);
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(248, 14);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(66, 13);
+            this.label9.TabIndex = 19;
+            this.label9.Text = "Data E Hora";
             // 
             // cbbStatus
             // 
@@ -249,60 +269,31 @@
             this.label2.TabIndex = 2;
             this.label2.Text = "Cliente";
             // 
-            // BTNsalvar
+            // btnSalvar
             // 
-            this.BTNsalvar.BackColor = System.Drawing.Color.SkyBlue;
-            this.BTNsalvar.Location = new System.Drawing.Point(12, 335);
-            this.BTNsalvar.Name = "BTNsalvar";
-            this.BTNsalvar.Size = new System.Drawing.Size(198, 52);
-            this.BTNsalvar.TabIndex = 7;
-            this.BTNsalvar.Text = "Salvar";
-            this.BTNsalvar.UseVisualStyleBackColor = false;
+            this.btnSalvar.BackColor = System.Drawing.Color.SkyBlue;
+            this.btnSalvar.Location = new System.Drawing.Point(12, 335);
+            this.btnSalvar.Name = "btnSalvar";
+            this.btnSalvar.Size = new System.Drawing.Size(198, 52);
+            this.btnSalvar.TabIndex = 7;
+            this.btnSalvar.Text = "Salvar";
+            this.btnSalvar.UseVisualStyleBackColor = false;
+            this.btnSalvar.Click += new System.EventHandler(this.btnSalvar_Click);
             // 
-            // label9
+            // txtobservacao
             // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(248, 14);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(66, 13);
-            this.label9.TabIndex = 19;
-            this.label9.Text = "Data E Hora";
-            // 
-            // textBox1
-            // 
-            this.textBox1.BackColor = System.Drawing.Color.LightYellow;
-            this.textBox1.Location = new System.Drawing.Point(251, 34);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.ReadOnly = true;
-            this.textBox1.Size = new System.Drawing.Size(125, 20);
-            this.textBox1.TabIndex = 20;
-            // 
-            // btnObservacao
-            // 
-            this.btnObservacao.BackColor = System.Drawing.Color.SkyBlue;
-            this.btnObservacao.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnObservacao.Location = new System.Drawing.Point(394, 12);
-            this.btnObservacao.Name = "btnObservacao";
-            this.btnObservacao.Size = new System.Drawing.Size(24, 375);
-            this.btnObservacao.TabIndex = 9;
-            this.btnObservacao.Text = ">OBSERVAÇÃO>";
-            this.btnObservacao.UseVisualStyleBackColor = false;
-            this.btnObservacao.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // textBox2
-            // 
-            this.textBox2.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.textBox2.Location = new System.Drawing.Point(427, 29);
-            this.textBox2.Multiline = true;
-            this.textBox2.Name = "textBox2";
-            this.textBox2.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.textBox2.Size = new System.Drawing.Size(345, 358);
-            this.textBox2.TabIndex = 21;
+            this.txtobservacao.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.txtobservacao.Location = new System.Drawing.Point(400, 29);
+            this.txtobservacao.Multiline = true;
+            this.txtobservacao.Name = "txtobservacao";
+            this.txtobservacao.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.txtobservacao.Size = new System.Drawing.Size(372, 358);
+            this.txtobservacao.TabIndex = 21;
             // 
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(424, 12);
+            this.label10.Location = new System.Drawing.Point(397, 12);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(65, 13);
             this.label10.TabIndex = 15;
@@ -313,19 +304,19 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Gray;
-            this.ClientSize = new System.Drawing.Size(420, 399);
+            this.ClientSize = new System.Drawing.Size(784, 399);
             this.Controls.Add(this.label10);
-            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.txtobservacao);
             this.Controls.Add(this.btnObservacao);
-            this.Controls.Add(this.BTNlimpar);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.BTNsalvar);
+            this.Controls.Add(this.btnSalvar);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.Name = "Ordem";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Ordem";
+            this.Load += new System.EventHandler(this.Ordem_Load);
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.groupBox1.ResumeLayout(false);
@@ -337,7 +328,7 @@
 
         #endregion
 
-        private System.Windows.Forms.Button BTNlimpar;
+        private System.Windows.Forms.Button btnObservacao;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.TextBox TXTdescricao;
         private System.Windows.Forms.Label label7;
@@ -352,15 +343,14 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox TXTsetor;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Button BTNsalvar;
+        private System.Windows.Forms.Button btnSalvar;
         private System.Windows.Forms.TextBox txtCliente;
         private System.Windows.Forms.ComboBox cbbStatus;
         private System.Windows.Forms.TextBox txtPrioridade;
         private System.Windows.Forms.TextBox txtUsuario;
-        private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Button btnObservacao;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox txtobservacao;
         private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.MaskedTextBox mtbDataHora;
     }
 }

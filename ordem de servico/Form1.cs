@@ -17,7 +17,7 @@ namespace ordem_de_servico
         //Metodos
         private void atualizarform()
         {
-            string cmd = "SELECT IFNULL(ordem_cliente.cliente, 'CLIENTE NÃO ENCONTRADO') 'Cliente', ordem_servico.titulo 'Título', ordem_servico.prioridade 'Prioridade', ordem_servico.estado 'Situação', ordem_servico.data_hora 'Data / Hora' FROM ordem_servico LEFT OUTER JOIN ordem_cliente ON(ordem_servico.id_cliente = ordem_cliente.id); ";
+            string cmd = "SELECT ordem_servico.id 'Codigo', IFNULL(ordem_cliente.cliente, 'CLIENTE NÃO ENCONTRADO') 'Cliente', ordem_servico.titulo 'Título', ordem_servico.prioridade 'Prioridade', ordem_servico.estado 'Situação', ordem_servico.data_hora 'Data / Hora' FROM ordem_servico LEFT OUTER JOIN ordem_cliente ON(ordem_servico.id_cliente = ordem_cliente.id); ";
             CG.ExecutarComandoSql(cmd);
             CG.ExibirDGV(dgvOrdem);
             CG.FormatarDGV(dgvOrdem);
@@ -167,9 +167,6 @@ namespace ordem_de_servico
                 MessageBox.Show("Deu Ruim");
             }
 
-            MessageBox.Show(Data_Final);
-            MessageBox.Show(Data_Inicial);
-
             string cmd = "SELECT " +
             "ordem_cliente.cliente 'Cliente'," +
             "ordem_servico.titulo 'Título'," +
@@ -194,8 +191,34 @@ namespace ordem_de_servico
             CG.FormatarDGV(dgvOrdem);
         }
 
+        public static DataTable dt = new DataTable();
+
+        //DataGridView
         private void dgvOrdem_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
+            string codigo = dgvOrdem.CurrentRow.Cells[0].Value.ToString();
+
+            string cmd = "SELECT " +
+                         "ordem_servico.id 'Codigo'," +
+                         "IFNULL(ordem_cliente.cliente," +
+                         "'CLIENTE NÃO ENCONTRADO') 'Cliente'," +
+                         "ordem_cliente.setor 'Setor'," +
+                         "ordem_servico.usuario 'Usuario'," +
+                         "ordem_servico.prioridade 'Prioridade'," +
+                         "ordem_servico.data_hora 'Data / Hora'," +
+                         "ordem_servico.titulo 'Título'," +
+                         "ordem_servico.descricao 'Descrição'," +
+                         "ordem_servico.estado 'Situação'," +
+                         "ordem_servico.observacao 'Observação'" +
+                         "FROM " +
+                         "ordem_servico " +
+                         "LEFT OUTER JOIN " +
+                         "ordem_cliente ON (ordem_servico.id_cliente = ordem_cliente.id)" +
+                         "where " +
+                         "ordem_servico.id = " + codigo + ";";
+            CG.ExecutarComandoSql(cmd);
+            CG.RetornarDadosDataTable(dt);
+
             Ordem Form = new Ordem();
             Form.ShowDialog();
         }
