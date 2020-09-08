@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Ordem));
             this.btnObservacao = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.mtbDataHora = new System.Windows.Forms.MaskedTextBox();
@@ -91,6 +92,7 @@
             // mtbDataHora
             // 
             this.mtbDataHora.BackColor = System.Drawing.SystemColors.Info;
+            this.mtbDataHora.Enabled = false;
             this.mtbDataHora.Location = new System.Drawing.Point(251, 34);
             this.mtbDataHora.Mask = "00/00/0000 90:00";
             this.mtbDataHora.Name = "mtbDataHora";
@@ -121,6 +123,7 @@
             // txtPrioridade
             // 
             this.txtPrioridade.BackColor = System.Drawing.Color.LightYellow;
+            this.txtPrioridade.Enabled = false;
             this.txtPrioridade.Location = new System.Drawing.Point(127, 34);
             this.txtPrioridade.Name = "txtPrioridade";
             this.txtPrioridade.ReadOnly = true;
@@ -130,6 +133,7 @@
             // txtUsuario
             // 
             this.txtUsuario.BackColor = System.Drawing.Color.LightYellow;
+            this.txtUsuario.Enabled = false;
             this.txtUsuario.Location = new System.Drawing.Point(6, 34);
             this.txtUsuario.Name = "txtUsuario";
             this.txtUsuario.ReadOnly = true;
@@ -139,6 +143,7 @@
             // TXTdescricao
             // 
             this.TXTdescricao.BackColor = System.Drawing.SystemColors.Info;
+            this.TXTdescricao.Enabled = false;
             this.TXTdescricao.Location = new System.Drawing.Point(6, 112);
             this.TXTdescricao.Multiline = true;
             this.TXTdescricao.Name = "TXTdescricao";
@@ -185,6 +190,7 @@
             // TXTtitulo
             // 
             this.TXTtitulo.BackColor = System.Drawing.SystemColors.Info;
+            this.TXTtitulo.Enabled = false;
             this.TXTtitulo.Location = new System.Drawing.Point(6, 73);
             this.TXTtitulo.Name = "TXTtitulo";
             this.TXTtitulo.ReadOnly = true;
@@ -212,6 +218,7 @@
             // TXTcodigo
             // 
             this.TXTcodigo.BackColor = System.Drawing.Color.LightYellow;
+            this.TXTcodigo.Enabled = false;
             this.TXTcodigo.Location = new System.Drawing.Point(6, 36);
             this.TXTcodigo.Name = "TXTcodigo";
             this.TXTcodigo.ReadOnly = true;
@@ -236,6 +243,7 @@
             // txtCliente
             // 
             this.txtCliente.BackColor = System.Drawing.Color.LightYellow;
+            this.txtCliente.Enabled = false;
             this.txtCliente.Location = new System.Drawing.Point(66, 36);
             this.txtCliente.Name = "txtCliente";
             this.txtCliente.ReadOnly = true;
@@ -254,6 +262,7 @@
             // TXTsetor
             // 
             this.TXTsetor.BackColor = System.Drawing.Color.LightYellow;
+            this.TXTsetor.Enabled = false;
             this.TXTsetor.Location = new System.Drawing.Point(240, 37);
             this.TXTsetor.Name = "TXTsetor";
             this.TXTsetor.ReadOnly = true;
@@ -283,17 +292,17 @@
             // txtobservacao
             // 
             this.txtobservacao.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.txtobservacao.Location = new System.Drawing.Point(400, 29);
+            this.txtobservacao.Location = new System.Drawing.Point(411, 29);
             this.txtobservacao.Multiline = true;
             this.txtobservacao.Name = "txtobservacao";
             this.txtobservacao.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.txtobservacao.Size = new System.Drawing.Size(372, 358);
+            this.txtobservacao.Size = new System.Drawing.Size(361, 358);
             this.txtobservacao.TabIndex = 21;
             // 
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(397, 12);
+            this.label10.Location = new System.Drawing.Point(408, 9);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(65, 13);
             this.label10.TabIndex = 15;
@@ -304,7 +313,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Gray;
-            this.ClientSize = new System.Drawing.Size(784, 399);
+            this.ClientSize = new System.Drawing.Size(404, 399);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.txtobservacao);
             this.Controls.Add(this.btnObservacao);
@@ -312,6 +321,7 @@
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.btnSalvar);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "Ordem";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

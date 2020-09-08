@@ -17,6 +17,8 @@ namespace ordem_de_servico
             InitializeComponent();
         }
 
+        private clasegury CG = new clasegury();
+
         /* Anotação
          *
          * Tamanho normao:  436
@@ -58,6 +60,13 @@ namespace ordem_de_servico
 
         private void btnSalvar_Click(object sender, EventArgs e)
         {
+            string codigo = TXTcodigo.Text;
+            string status = cbbStatus.Text;
+            string observacao = txtobservacao.Text;
+
+            string cmd = "UPDATE `ods_teste`.`ordem_servico` SET `estado` = '" + status + "', `observacao` = '" + observacao + "' WHERE (`id` = '" + codigo + "');";
+            CG.ExecutarComandoSql(cmd);
+            Close();
         }
 
         private void btnObservacao_Click(object sender, EventArgs e)
@@ -66,12 +75,14 @@ namespace ordem_de_servico
             {
                 Ordem.ActiveForm.Width = 800;
                 btnObservacao.BackColor = Color.DodgerBlue;
+                btnObservacao.Text = "Fechar Observação";
                 return;
             }
             if (btnObservacao.BackColor == Color.DodgerBlue)
             {
-                Ordem.ActiveForm.Width = 436;
+                Ordem.ActiveForm.Width = 420;
                 btnObservacao.BackColor = Color.SkyBlue;
+                btnObservacao.Text = "Abrir Observação";
                 return;
             }
         }

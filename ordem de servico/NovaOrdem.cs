@@ -148,6 +148,7 @@ namespace ordem_de_servico
             CarregarDadosComboBox();
             CBBprioridade.SelectedIndex = 0;
             CBBusuario.SelectedIndex = 0;
+            CG.FormatarDTP(DTPnovaOrdem);
         }
 
         //Form

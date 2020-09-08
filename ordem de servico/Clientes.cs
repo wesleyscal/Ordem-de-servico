@@ -95,9 +95,6 @@ namespace ordem_de_servico
         {
             TXTcliente.Clear();
             CBBsetor.SelectedIndex = 0;
-
-            string teste = DGVcliente.CurrentCell.Value.ToString();
-            MessageBox.Show(teste);
         }
 
         private void BTNsalvar_Click(object sender, EventArgs e)
