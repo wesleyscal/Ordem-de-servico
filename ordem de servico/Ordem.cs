@@ -64,7 +64,7 @@ namespace ordem_de_servico
             string status = cbbStatus.Text;
             string observacao = txtobservacao.Text;
 
-            string cmd = "UPDATE `ordem_servico` SET `estado` = '" + status + "', `observacao` = '" + observacao + "' WHERE (`id` = '" + codigo + "');";
+            string cmd = "UPDATE `ods_teste`.`ordem_servico` SET `estado` = '" + status + "', `observacao` = '" + observacao + "' WHERE (`id` = '" + codigo + "');";
             CG.ExecutarComandoSql(cmd);
             Close();
         }

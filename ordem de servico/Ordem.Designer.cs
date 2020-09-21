@@ -53,8 +53,12 @@
             this.btnSalvar = new System.Windows.Forms.Button();
             this.txtobservacao = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.btnSalvarOb = new System.Windows.Forms.Button();
+            this.btnExcluirOb = new System.Windows.Forms.Button();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // btnObservacao
@@ -82,6 +86,7 @@
             this.groupBox2.Controls.Add(this.label3);
             this.groupBox2.Controls.Add(this.TXTtitulo);
             this.groupBox2.Controls.Add(this.label4);
+            this.groupBox2.ForeColor = System.Drawing.Color.White;
             this.groupBox2.Location = new System.Drawing.Point(12, 80);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(382, 249);
@@ -104,6 +109,8 @@
             // label9
             // 
             this.label9.AutoSize = true;
+            this.label9.BackColor = System.Drawing.Color.Gray;
+            this.label9.ForeColor = System.Drawing.Color.White;
             this.label9.Location = new System.Drawing.Point(248, 14);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(66, 13);
@@ -154,6 +161,8 @@
             // label7
             // 
             this.label7.AutoSize = true;
+            this.label7.BackColor = System.Drawing.Color.Gray;
+            this.label7.ForeColor = System.Drawing.Color.White;
             this.label7.Location = new System.Drawing.Point(251, 57);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(37, 13);
@@ -163,6 +172,8 @@
             // label5
             // 
             this.label5.AutoSize = true;
+            this.label5.BackColor = System.Drawing.Color.Gray;
+            this.label5.ForeColor = System.Drawing.Color.White;
             this.label5.Location = new System.Drawing.Point(3, 57);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(33, 13);
@@ -172,6 +183,8 @@
             // label1
             // 
             this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Gray;
+            this.label1.ForeColor = System.Drawing.Color.White;
             this.label1.Location = new System.Drawing.Point(6, 18);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(41, 13);
@@ -181,6 +194,8 @@
             // label3
             // 
             this.label3.AutoSize = true;
+            this.label3.BackColor = System.Drawing.Color.Gray;
+            this.label3.ForeColor = System.Drawing.Color.White;
             this.label3.Location = new System.Drawing.Point(124, 18);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(54, 13);
@@ -200,6 +215,8 @@
             // label4
             // 
             this.label4.AutoSize = true;
+            this.label4.BackColor = System.Drawing.Color.Gray;
+            this.label4.ForeColor = System.Drawing.Color.White;
             this.label4.Location = new System.Drawing.Point(3, 96);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(55, 13);
@@ -209,6 +226,8 @@
             // label8
             // 
             this.label8.AutoSize = true;
+            this.label8.BackColor = System.Drawing.Color.Gray;
+            this.label8.ForeColor = System.Drawing.Color.White;
             this.label8.Location = new System.Drawing.Point(3, 20);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(40, 13);
@@ -233,6 +252,7 @@
             this.groupBox1.Controls.Add(this.label6);
             this.groupBox1.Controls.Add(this.TXTsetor);
             this.groupBox1.Controls.Add(this.label2);
+            this.groupBox1.ForeColor = System.Drawing.Color.White;
             this.groupBox1.Location = new System.Drawing.Point(12, 9);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(382, 65);
@@ -253,6 +273,8 @@
             // label6
             // 
             this.label6.AutoSize = true;
+            this.label6.BackColor = System.Drawing.Color.Gray;
+            this.label6.ForeColor = System.Drawing.Color.White;
             this.label6.Location = new System.Drawing.Point(237, 20);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(32, 13);
@@ -272,6 +294,8 @@
             // label2
             // 
             this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.Gray;
+            this.label2.ForeColor = System.Drawing.Color.White;
             this.label2.Location = new System.Drawing.Point(63, 20);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(39, 13);
@@ -292,28 +316,61 @@
             // txtobservacao
             // 
             this.txtobservacao.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.txtobservacao.Location = new System.Drawing.Point(411, 29);
+            this.txtobservacao.Location = new System.Drawing.Point(411, 195);
             this.txtobservacao.Multiline = true;
             this.txtobservacao.Name = "txtobservacao";
             this.txtobservacao.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.txtobservacao.Size = new System.Drawing.Size(361, 358);
+            this.txtobservacao.Size = new System.Drawing.Size(361, 134);
             this.txtobservacao.TabIndex = 21;
             // 
             // label10
             // 
             this.label10.AutoSize = true;
+            this.label10.BackColor = System.Drawing.Color.Gray;
+            this.label10.ForeColor = System.Drawing.Color.White;
             this.label10.Location = new System.Drawing.Point(408, 9);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(65, 13);
             this.label10.TabIndex = 15;
             this.label10.Text = "Observação";
             // 
+            // dataGridView1
+            // 
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(411, 25);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.Size = new System.Drawing.Size(361, 164);
+            this.dataGridView1.TabIndex = 22;
+            // 
+            // btnSalvarOb
+            // 
+            this.btnSalvarOb.BackColor = System.Drawing.Color.SkyBlue;
+            this.btnSalvarOb.Location = new System.Drawing.Point(411, 335);
+            this.btnSalvarOb.Name = "btnSalvarOb";
+            this.btnSalvarOb.Size = new System.Drawing.Size(180, 52);
+            this.btnSalvarOb.TabIndex = 23;
+            this.btnSalvarOb.Text = "Salvar Observação";
+            this.btnSalvarOb.UseVisualStyleBackColor = false;
+            // 
+            // btnExcluirOb
+            // 
+            this.btnExcluirOb.BackColor = System.Drawing.Color.SkyBlue;
+            this.btnExcluirOb.Location = new System.Drawing.Point(597, 335);
+            this.btnExcluirOb.Name = "btnExcluirOb";
+            this.btnExcluirOb.Size = new System.Drawing.Size(175, 52);
+            this.btnExcluirOb.TabIndex = 24;
+            this.btnExcluirOb.Text = "Excluir Observação";
+            this.btnExcluirOb.UseVisualStyleBackColor = false;
+            // 
             // Ordem
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Gray;
-            this.ClientSize = new System.Drawing.Size(404, 399);
+            this.ClientSize = new System.Drawing.Size(784, 399);
+            this.Controls.Add(this.btnExcluirOb);
+            this.Controls.Add(this.btnSalvarOb);
+            this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.txtobservacao);
             this.Controls.Add(this.btnObservacao);
@@ -331,6 +388,7 @@
             this.groupBox2.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -362,5 +420,8 @@
         private System.Windows.Forms.TextBox txtobservacao;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.MaskedTextBox mtbDataHora;
+        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.Button btnSalvarOb;
+        private System.Windows.Forms.Button btnExcluirOb;
     }
 }

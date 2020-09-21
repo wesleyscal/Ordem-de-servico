@@ -21,7 +21,6 @@ namespace ordem_de_servico
             CG.ExecutarComandoSql(cmd);
             CG.ExibirDGV(dgvOrdem);
             CG.FormatarDGV(dgvOrdem);
-            dgvOrdem.Columns[0].Visible = false;
         }
 
         private void CarregarDadosComboBox()
@@ -169,7 +168,6 @@ namespace ordem_de_servico
             }
 
             string cmd = "SELECT " +
-            "ordem_servico.id," +
             "ordem_cliente.cliente 'Cliente'," +
             "ordem_servico.titulo 'Título'," +
             "ordem_servico.prioridade 'Prioridade'," +
@@ -191,8 +189,6 @@ namespace ordem_de_servico
             CG.ExecutarComandoSql(cmd);
             CG.ExibirDGV(dgvOrdem);
             CG.FormatarDGV(dgvOrdem);
-
-            dgvOrdem.Columns[0].Visible = false;
         }
 
         public static DataTable dt = new DataTable();
@@ -225,8 +221,6 @@ namespace ordem_de_servico
 
             Ordem Form = new Ordem();
             Form.ShowDialog();
-
-            atualizarform();
         }
     }
 }
