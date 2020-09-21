@@ -51,14 +51,14 @@
             this.TXTsetor = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.btnSalvar = new System.Windows.Forms.Button();
-            this.txtobservacao = new System.Windows.Forms.TextBox();
+            this.txtObservacao = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dgvObservacao = new System.Windows.Forms.DataGridView();
             this.btnSalvarOb = new System.Windows.Forms.Button();
             this.btnExcluirOb = new System.Windows.Forms.Button();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvObservacao)).BeginInit();
             this.SuspendLayout();
             // 
             // btnObservacao
@@ -313,15 +313,15 @@
             this.btnSalvar.UseVisualStyleBackColor = false;
             this.btnSalvar.Click += new System.EventHandler(this.btnSalvar_Click);
             // 
-            // txtobservacao
+            // txtObservacao
             // 
-            this.txtobservacao.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.txtobservacao.Location = new System.Drawing.Point(411, 195);
-            this.txtobservacao.Multiline = true;
-            this.txtobservacao.Name = "txtobservacao";
-            this.txtobservacao.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.txtobservacao.Size = new System.Drawing.Size(361, 134);
-            this.txtobservacao.TabIndex = 21;
+            this.txtObservacao.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.txtObservacao.Location = new System.Drawing.Point(411, 195);
+            this.txtObservacao.Multiline = true;
+            this.txtObservacao.Name = "txtObservacao";
+            this.txtObservacao.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.txtObservacao.Size = new System.Drawing.Size(361, 134);
+            this.txtObservacao.TabIndex = 21;
             // 
             // label10
             // 
@@ -334,13 +334,13 @@
             this.label10.TabIndex = 15;
             this.label10.Text = "Observação";
             // 
-            // dataGridView1
+            // dgvObservacao
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(411, 25);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(361, 164);
-            this.dataGridView1.TabIndex = 22;
+            this.dgvObservacao.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvObservacao.Location = new System.Drawing.Point(411, 25);
+            this.dgvObservacao.Name = "dgvObservacao";
+            this.dgvObservacao.Size = new System.Drawing.Size(361, 164);
+            this.dgvObservacao.TabIndex = 22;
             // 
             // btnSalvarOb
             // 
@@ -370,9 +370,9 @@
             this.ClientSize = new System.Drawing.Size(784, 399);
             this.Controls.Add(this.btnExcluirOb);
             this.Controls.Add(this.btnSalvarOb);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.dgvObservacao);
             this.Controls.Add(this.label10);
-            this.Controls.Add(this.txtobservacao);
+            this.Controls.Add(this.txtObservacao);
             this.Controls.Add(this.btnObservacao);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
@@ -388,7 +388,7 @@
             this.groupBox2.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvObservacao)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -417,10 +417,10 @@
         private System.Windows.Forms.TextBox txtPrioridade;
         private System.Windows.Forms.TextBox txtUsuario;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.TextBox txtobservacao;
+        private System.Windows.Forms.TextBox txtObservacao;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.MaskedTextBox mtbDataHora;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dgvObservacao;
         private System.Windows.Forms.Button btnSalvarOb;
         private System.Windows.Forms.Button btnExcluirOb;
     }

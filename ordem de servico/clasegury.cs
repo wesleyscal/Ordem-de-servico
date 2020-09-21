@@ -8,9 +8,9 @@ namespace ordem_de_servico
 {
     public class clasegury
     {
-        private const string Banco = "ods_teste";
+        public static string Banco = "ods_teste";
 
-        private const string V = "server=localhost;port=3306;User id=root;database=" + Banco + ";password=Pa$$w0rd;CharSet=utf8";
+        private static string V = "server=localhost;port=3306;User id=root;database=" + Banco + ";password=Pa$$w0rd;CharSet=utf8";
         public MySqlCommand myCMD = new MySqlCommand();
         public MySqlConnection conectarbanco = new MySqlConnection();
 
@@ -173,9 +173,9 @@ namespace ordem_de_servico
         public void FormatarDTP(DateTimePicker DTP)
         {
             //Data Minima e Maxima
+            DTP.Value = DateTime.Now;
             DTP.MinDate = new DateTime(2000, 6, 20);
             DTP.MaxDate = DateTime.Now;
-            DTP.Value = DateTime.Now;
 
             //Data Formato
             DTP.Format = DateTimePickerFormat.Custom;

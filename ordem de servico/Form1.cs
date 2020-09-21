@@ -208,8 +208,7 @@ namespace ordem_de_servico
                          "ordem_servico.data_hora 'Data / Hora'," +
                          "ordem_servico.titulo 'Título'," +
                          "ordem_servico.descricao 'Descrição'," +
-                         "ordem_servico.estado 'Situação'," +
-                         "ordem_servico.observacao 'Observação'" +
+                         "ordem_servico.estado 'Situação'" +
                          "FROM " +
                          "ordem_servico " +
                          "LEFT OUTER JOIN " +

@@ -21,7 +21,7 @@ namespace ordem_de_servico
 
         /* Anotação
          *
-         * Tamanho normao:  436
+         * Tamanho normao:  436 ou 420 nao lembro
          *
          * Tamanho Grande:  800
          *
@@ -36,6 +36,8 @@ namespace ordem_de_servico
 
             foreach (DataRow r in Form1.dt.Rows)
             {
+                string id = r[0].ToString(); ;
+                CarregarInformacoesObservacao(id);
                 TXTcodigo.Text = r[0].ToString();
                 txtCliente.Text = r[1].ToString();
                 TXTsetor.Text = r[2].ToString();
@@ -45,8 +47,15 @@ namespace ordem_de_servico
                 TXTtitulo.Text = r[6].ToString();
                 TXTdescricao.Text = r[7].ToString();
                 cbbStatus.SelectedItem = r[8].ToString();
-                txtobservacao.Text = r[9].ToString();
             }
+        }
+
+        private void CarregarInformacoesObservacao(string IdServico)
+        {
+            string cmd = "SELECT ordem_servico_observacao.data, ordem_servico_observacao.observacao FROM ordem_servico_observacao where id_servico = " + IdServico + ";";
+            CG.ExecutarComandoSql(cmd);
+            CG.ExibirDGV(dgvObservacao);
+            CG.FormatarDGV(dgvObservacao);
         }
 
         private void Ordem_Load(object sender, EventArgs e)
@@ -62,9 +71,9 @@ namespace ordem_de_servico
         {
             string codigo = TXTcodigo.Text;
             string status = cbbStatus.Text;
-            string observacao = txtobservacao.Text;
+            string observacao = txtObservacao.Text;
 
-            string cmd = "UPDATE `ods_teste`.`ordem_servico` SET `estado` = '" + status + "', `observacao` = '" + observacao + "' WHERE (`id` = '" + codigo + "');";
+            string cmd = "UPDATE `" + clasegury.Banco + "`.`ordem_servico` SET `estado` = '" + status + "' WHERE (`id` = '" + codigo + "');";
             CG.ExecutarComandoSql(cmd);
             Close();
         }
