@@ -21,18 +21,23 @@ namespace ordem_de_servico
             CG.ExecutarComandoSql(cmd);
             CG.ExibirDGV(dgvOrdem);
             CG.FormatarDGV(dgvOrdem);
+            dgvOrdem.Columns[0].Visible = false;
         }
 
         private void CarregarDadosComboBox()
         {
             cbbUsuario.Items.Clear();
             cbbCliente.Items.Clear();
+            cbbStatus.Items.Clear();
 
             cbbCliente.Items.Add("Todos os Cliente");
             cbbCliente.SelectedIndex = 0;
 
             cbbUsuario.Items.Add("Todos os Usuario");
             cbbUsuario.SelectedIndex = 0;
+
+            cbbStatus.Items.Add("Todos os Status");
+            cbbStatus.SelectedIndex = 0;
 
             //Declara um DataTable
             DataTable dt;
@@ -61,18 +66,22 @@ namespace ordem_de_servico
             //Usuario
             cbbUsuario.Items.Add("Lucas");
             cbbUsuario.Items.Add("Wesley gury");
+
+            //Status
+            cbbStatus.Items.Add("Aberto");
+            cbbStatus.Items.Add("Andamento");
+            cbbStatus.Items.Add("Finalizado");
         }
 
         public void AlterarNomeBotaoData()
         {
-            btnData.Text = clasegury.DataInicial + "\n Até \n" + clasegury.DataFinal;
+            txtDataInicial.Text = clasegury.DataInicial;
+            txtDataFinal.Text = clasegury.DataFinal;
         }
 
         //form
         private void Form1_Load(object sender, EventArgs e)
         {
-            RDBaberto.Checked = true;
-
             atualizarform();
             CarregarDadosComboBox();
         }
@@ -82,6 +91,20 @@ namespace ordem_de_servico
             if (e.KeyCode == Keys.F2)
             {
                 atualizarform();
+            }
+            if (e.KeyCode == Keys.F3)
+            {
+                data Fdat = new data();
+                Fdat.ShowDialog(this);
+                if (clasegury.DataFinal != "" && clasegury.DataInicial != "")
+                {
+                    AlterarNomeBotaoData();
+                }
+                else
+                {
+                    txtDataInicial.Text = "";
+                    txtDataFinal.Text = "";
+                }
             }
         }
 
@@ -102,16 +125,6 @@ namespace ordem_de_servico
 
         private void btnData_Click(object sender, EventArgs e)
         {
-            data Fdat = new data();
-            Fdat.ShowDialog(this);
-            if (clasegury.DataFinal != "" && clasegury.DataInicial != "")
-            {
-                AlterarNomeBotaoData();
-            }
-            else
-            {
-                btnData.Text = "Data";
-            }
         }
 
         private void btnPesquisar_Click(object sender, EventArgs e)
@@ -121,7 +134,7 @@ namespace ordem_de_servico
             string Data_Final = "";
             string Cliente = "";
             string Usuario = "";
-            string Estado = "";
+            string Status = "";
 
             //Atribuir valor a Condição
             if (clasegury.DataInicial == "" && clasegury.DataFinal == "")
@@ -150,24 +163,17 @@ namespace ordem_de_servico
             {
                 Usuario = cbbUsuario.Text;
             }
-            if (RDBaberto.Checked == true)
+            if (cbbStatus.SelectedIndex == 0)
             {
-                Estado = "Aberto";
-            }
-            else if (RDBandamento.Checked == true)
-            {
-                Estado = "Andamento";
-            }
-            else if (RDBfinalizado.Checked == true)
-            {
-                Estado = "Finalizado";
+                Status = "%%";
             }
             else
             {
-                MessageBox.Show("Deu Ruim");
+                Status = cbbStatus.Text;
             }
 
             string cmd = "SELECT " +
+            "ordem_servico.id," +
             "ordem_cliente.cliente 'Cliente'," +
             "ordem_servico.titulo 'Título'," +
             "ordem_servico.prioridade 'Prioridade'," +
@@ -184,11 +190,13 @@ namespace ordem_de_servico
             "and " +
             "usuario like '" + Usuario + "' " +
             "and " +
-            "estado = '" + Estado + "';";
+            "estado like '" + Status + "';";
 
             CG.ExecutarComandoSql(cmd);
             CG.ExibirDGV(dgvOrdem);
             CG.FormatarDGV(dgvOrdem);
+
+            dgvOrdem.Columns[0].Visible = false;
         }
 
         public static DataTable dt = new DataTable();
@@ -196,30 +204,33 @@ namespace ordem_de_servico
         //DataGridView
         private void dgvOrdem_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            string codigo = dgvOrdem.CurrentRow.Cells[0].Value.ToString();
+            if (e.RowIndex != -1)
+            {
+                string codigo = dgvOrdem.CurrentRow.Cells[0].Value.ToString();
 
-            string cmd = "SELECT " +
-                         "ordem_servico.id 'Codigo'," +
-                         "IFNULL(ordem_cliente.cliente," +
-                         "'CLIENTE NÃO ENCONTRADO') 'Cliente'," +
-                         "ordem_cliente.setor 'Setor'," +
-                         "ordem_servico.usuario 'Usuario'," +
-                         "ordem_servico.prioridade 'Prioridade'," +
-                         "ordem_servico.data_hora 'Data / Hora'," +
-                         "ordem_servico.titulo 'Título'," +
-                         "ordem_servico.descricao 'Descrição'," +
-                         "ordem_servico.estado 'Situação'" +
-                         "FROM " +
-                         "ordem_servico " +
-                         "LEFT OUTER JOIN " +
-                         "ordem_cliente ON (ordem_servico.id_cliente = ordem_cliente.id)" +
-                         "where " +
-                         "ordem_servico.id = " + codigo + ";";
-            CG.ExecutarComandoSql(cmd);
-            CG.RetornarDadosDataTable(dt);
+                string cmd = "SELECT " +
+                             "ordem_servico.id 'Codigo'," +
+                             "IFNULL(ordem_cliente.cliente," +
+                             "'CLIENTE NÃO ENCONTRADO') 'Cliente'," +
+                             "ordem_cliente.setor 'Setor'," +
+                             "ordem_servico.usuario 'Usuario'," +
+                             "ordem_servico.prioridade 'Prioridade'," +
+                             "ordem_servico.data_hora 'Data / Hora'," +
+                             "ordem_servico.titulo 'Título'," +
+                             "ordem_servico.descricao 'Descrição'," +
+                             "ordem_servico.estado 'Situação'" +
+                             "FROM " +
+                             "ordem_servico " +
+                             "LEFT OUTER JOIN " +
+                             "ordem_cliente ON (ordem_servico.id_cliente = ordem_cliente.id)" +
+                             "where " +
+                             "ordem_servico.id = " + codigo + ";";
+                CG.ExecutarComandoSql(cmd);
+                CG.RetornarDadosDataTable(dt);
 
-            Ordem Form = new Ordem();
-            Form.ShowDialog();
+                Ordem Form = new Ordem();
+                Form.ShowDialog();
+            }
         }
     }
 }

@@ -27,7 +27,35 @@ namespace ordem_de_servico
          *
          */
 
-        private void CarregarInformarcoesPesquisa()
+        private void ExcluirObservacao()
+        {
+            int x = 0;
+            foreach (DataGridViewRow r in dgvObservacao.Rows)
+            {
+                if (r.Selected)
+                {
+                    x++;
+                }
+            }
+            if (x == 0)
+            {
+                MessageBox.Show("Nenhuma Observação selecionada!", Text);
+                return;
+            }
+
+            //vsariavel
+            string observacao = dgvObservacao.CurrentRow.Cells[0].Value.ToString();
+            string cmd = "delete from ordem_servico_observacao where id = " + observacao + ";";
+
+            DialogResult confirm = MessageBox.Show("Deseja Continuar?", "Excluir Observacao", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation, MessageBoxDefaultButton.Button2);
+            if (confirm.ToString().ToUpper() == "YES")
+            {
+                CG.ExecutarComandoSql(cmd);
+                CarregarInformacoesObservacao();
+            }
+        }
+
+        private void CarregarInformacoesPesquisa()
         {
             if (Form1.dt.Rows.Count == 0)
             {
@@ -36,8 +64,6 @@ namespace ordem_de_servico
 
             foreach (DataRow r in Form1.dt.Rows)
             {
-                string id = r[0].ToString(); ;
-                CarregarInformacoesObservacao(id);
                 TXTcodigo.Text = r[0].ToString();
                 txtCliente.Text = r[1].ToString();
                 TXTsetor.Text = r[2].ToString();
@@ -50,9 +76,10 @@ namespace ordem_de_servico
             }
         }
 
-        private void CarregarInformacoesObservacao(string IdServico)
+        private void CarregarInformacoesObservacao()
         {
-            string cmd = "SELECT ordem_servico_observacao.data, ordem_servico_observacao.observacao FROM ordem_servico_observacao where id_servico = " + IdServico + ";";
+            string IdServico = TXTcodigo.Text;
+            string cmd = "SELECT ordem_servico_observacao.id, ordem_servico_observacao.data, ordem_servico_observacao.observacao FROM ordem_servico_observacao where id_servico = " + IdServico + ";";
             CG.ExecutarComandoSql(cmd);
             CG.ExibirDGV(dgvObservacao);
             CG.FormatarDGV(dgvObservacao);
@@ -64,7 +91,8 @@ namespace ordem_de_servico
             cbbStatus.Items.Add("Andamento");
             cbbStatus.Items.Add("Finalizado");
 
-            CarregarInformarcoesPesquisa();
+            CarregarInformacoesPesquisa();
+            CarregarInformacoesObservacao();
         }
 
         private void btnSalvar_Click(object sender, EventArgs e)
@@ -94,6 +122,50 @@ namespace ordem_de_servico
                 btnObservacao.Text = "Abrir Observação";
                 return;
             }
+        }
+
+        private void btnSalvarOb_Click(object sender, EventArgs e)
+        {
+            if (txtObservacao.Text.Trim() != "")
+            {
+                string IdServico = TXTcodigo.Text;
+                string Observacao = txtObservacao.Text;
+                string Data = CG.DataMySQL(DateTime.Today.ToString());
+
+                string cmd = "INSERT INTO `ordem_servico_observacao` (`id_servico`, `observacao`, `data`) VALUES ('" + IdServico + "', '" + Observacao + "', '" + Data + "');";
+                CG.ExecutarComandoSql(cmd);
+                CarregarInformacoesObservacao();
+            }
+            else
+            {
+                MessageBox.Show("Campo Observações esta sem preencher");
+            }
+        }
+
+        private void btnExcluirOb_Click(object sender, EventArgs e)
+        {
+            ExcluirObservacao();
+        }
+
+        private void dgvObservacao_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            int x = 0;
+            foreach (DataGridViewRow r in dgvObservacao.Rows)
+            {
+                if (r.Selected)
+                {
+                    x++;
+                }
+            }
+            if (x == 0)
+            {
+                MessageBox.Show("Nenhuma Observação selecionada!", Text);
+                return;
+            }
+
+            string observacao = dgvObservacao.CurrentRow.Cells[2].Value.ToString();
+
+            MessageBox.Show(observacao);
         }
     }
 }

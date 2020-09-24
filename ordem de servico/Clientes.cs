@@ -70,7 +70,7 @@ namespace ordem_de_servico
                 return;
             }
 
-            //vsariavel
+            //variavel
             string cliente = DGVcliente.CurrentRow.Cells[0].Value.ToString();
             string cmd = "delete from ordem_cliente where id = " + cliente + ";";
 

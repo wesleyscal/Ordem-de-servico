@@ -341,6 +341,7 @@
             this.dgvObservacao.Name = "dgvObservacao";
             this.dgvObservacao.Size = new System.Drawing.Size(361, 164);
             this.dgvObservacao.TabIndex = 22;
+            this.dgvObservacao.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvObservacao_CellDoubleClick);
             // 
             // btnSalvarOb
             // 
@@ -351,6 +352,7 @@
             this.btnSalvarOb.TabIndex = 23;
             this.btnSalvarOb.Text = "Salvar Observação";
             this.btnSalvarOb.UseVisualStyleBackColor = false;
+            this.btnSalvarOb.Click += new System.EventHandler(this.btnSalvarOb_Click);
             // 
             // btnExcluirOb
             // 
@@ -361,13 +363,14 @@
             this.btnExcluirOb.TabIndex = 24;
             this.btnExcluirOb.Text = "Excluir Observação";
             this.btnExcluirOb.UseVisualStyleBackColor = false;
+            this.btnExcluirOb.Click += new System.EventHandler(this.btnExcluirOb_Click);
             // 
             // Ordem
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Gray;
-            this.ClientSize = new System.Drawing.Size(784, 399);
+            this.ClientSize = new System.Drawing.Size(404, 399);
             this.Controls.Add(this.btnExcluirOb);
             this.Controls.Add(this.btnSalvarOb);
             this.Controls.Add(this.dgvObservacao);
