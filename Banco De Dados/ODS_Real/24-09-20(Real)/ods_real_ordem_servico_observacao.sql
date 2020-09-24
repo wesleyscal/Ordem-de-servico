@@ -1,6 +1,6 @@
 -- MySQL dump 10.13  Distrib 8.0.20, for Win64 (x86_64)
 --
--- Host: localhost    Database: ods_teste
+-- Host: localhost    Database: ods_real
 -- ------------------------------------------------------
 -- Server version	8.0.20
 
@@ -15,32 +15,30 @@
 /*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
-CREATE TABLE ods_teste;
-USE ods_teste;
-
 --
--- Table structure for table `ordem_cliente`
+-- Table structure for table `ordem_servico_observacao`
 --
 
-DROP TABLE IF EXISTS `ordem_cliente`;
+DROP TABLE IF EXISTS `ordem_servico_observacao`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `ordem_cliente` (
+CREATE TABLE `ordem_servico_observacao` (
   `id` int NOT NULL AUTO_INCREMENT,
-  `cliente` varchar(200) NOT NULL,
-  `setor` varchar(200) NOT NULL,
+  `id_servico` int NOT NULL,
+  `observacao` varchar(2500) NOT NULL,
+  `data` date NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=17 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `ordem_cliente`
+-- Dumping data for table `ordem_servico_observacao`
 --
 
-LOCK TABLES `ordem_cliente` WRITE;
-/*!40000 ALTER TABLE `ordem_cliente` DISABLE KEYS */;
-INSERT INTO `ordem_cliente` VALUES (1,'lucas gay','TI'),(2,'Gury Fodao','TI'),(3,'Costela de porco','VENDAS'),(12,'Carecone','Vendas'),(13,'Marquinho empada','Fogão'),(16,'lucao amigao','TI');
-/*!40000 ALTER TABLE `ordem_cliente` ENABLE KEYS */;
+LOCK TABLES `ordem_servico_observacao` WRITE;
+/*!40000 ALTER TABLE `ordem_servico_observacao` DISABLE KEYS */;
+INSERT INTO `ordem_servico_observacao` VALUES (1,2,'Falta Fechar a porta do Swtch.','2020-09-08'),(2,3,'Planilha esta no Desktop com o nome \"Lucão\",','2020-09-09'),(3,4,'ok Entregue','2020-09-09'),(4,5,'Um deles parou.','2020-09-09'),(5,7,'Obeservar se esta com lentidão, Troquei a fonte e parece que parou de travar.','2020-09-15');
+/*!40000 ALTER TABLE `ordem_servico_observacao` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
@@ -52,4 +50,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2020-09-01 17:43:33
+-- Dump completed on 2020-09-24 11:01:30

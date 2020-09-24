@@ -31,9 +31,8 @@ CREATE TABLE `ordem_servico` (
   `titulo` varchar(200) NOT NULL,
   `descricao` varchar(5000) NOT NULL,
   `estado` varchar(200) NOT NULL,
-  `observacao` varchar(5000),
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -42,7 +41,7 @@ CREATE TABLE `ordem_servico` (
 
 LOCK TABLES `ordem_servico` WRITE;
 /*!40000 ALTER TABLE `ordem_servico` DISABLE KEYS */;
-INSERT INTO `ordem_servico` VALUES (1,2,'Wesley Gury','Urgente','2020-08-12 16:42:15','urgente','treta','Aberto'),(2,12,'Lucas','Media','2020-08-12 17:32:19','lipar a careca','lipar a careca do carecone','Aberto'),(3,12,'Wesley Gury','Alta','2020-08-12 17:33:19','Come cu de curioso','descriçao de como come cu de curioso','Aberto'),(4,2,'Lucas','Baixa','2020-08-04 17:34:07','tata','010203040506070809\r\n','Aberto'),(5,13,'Lucas','Baixa','2020-08-21 10:09:22','Ave maria, Coração chego a bate','Olha o caminha do leite','Aberto'),(6,16,'Wesley Gury','Alta','2020-09-01 17:24:40','Teste pesquisa 01','A Pesquisa Foi Comcluida Com Sucesso','Aberto'),(7,16,'Wesley Gury','Media','2020-09-01 17:26:00','yoga yoga yoga','o lucão da o toba','Aberto'),(8,12,'Lucas','Urgente','2020-09-01 17:28:10','Limpar a Careca Dinovo','Teste 01','Aberto');
+INSERT INTO `ordem_servico` VALUES (9,2,'Lucas','Media','2020-09-04 10:41:29','Limpar Careca','Ajudar o Gury a limpar a careca do carecone','Aberto'),(10,3,'Wesley Gury','Urgente','2020-09-07 10:27:15','Fazer teste na ordem de serviço','Testar a ordem de serviço ate ficar 100%','Andamento'),(11,2,'Lucas','Urgente','2020-08-07 10:27:15','Add estado','Adicionar estado a ordem de serviço','Andamento'),(12,2,'Lucas','Urgente','2019-12-01 10:27:15','Add estado 02','Adicionar estado a ordem de serviço 02','Aberto'),(13,4,'Lucas','Alta','2020-09-08 08:58:56','vender empada','Ajudar o maquinha com a venda de empada','Andamento');
 /*!40000 ALTER TABLE `ordem_servico` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -55,4 +54,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2020-09-01 17:43:33
+-- Dump completed on 2020-09-24 11:00:37

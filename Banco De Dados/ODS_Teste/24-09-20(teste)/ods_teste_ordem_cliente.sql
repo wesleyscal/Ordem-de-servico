@@ -1,8 +1,6 @@
-CREATE DATABASE  IF NOT EXISTS `ods_real` /*!40100 DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci */ /*!80016 DEFAULT ENCRYPTION='N' */;
-USE `ods_real`;
 -- MySQL dump 10.13  Distrib 8.0.20, for Win64 (x86_64)
 --
--- Host: localhost    Database: ods_real
+-- Host: localhost    Database: ods_teste
 -- ------------------------------------------------------
 -- Server version	8.0.20
 
@@ -29,7 +27,7 @@ CREATE TABLE `ordem_cliente` (
   `cliente` varchar(200) NOT NULL,
   `setor` varchar(200) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -38,37 +36,8 @@ CREATE TABLE `ordem_cliente` (
 
 LOCK TABLES `ordem_cliente` WRITE;
 /*!40000 ALTER TABLE `ordem_cliente` DISABLE KEYS */;
+INSERT INTO `ordem_cliente` VALUES (1,'Alemão Vidente','Almoxarifado'),(2,'Gury king of bitches','TI'),(3,'Lucao stark','TI'),(4,'Marquinho empada','Fogão');
 /*!40000 ALTER TABLE `ordem_cliente` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
--- Table structure for table `ordem_servico`
---
-
-DROP TABLE IF EXISTS `ordem_servico`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `ordem_servico` (
-  `id` int NOT NULL AUTO_INCREMENT,
-  `id_cliente` int NOT NULL,
-  `usuario` varchar(200) NOT NULL,
-  `prioridade` varchar(200) NOT NULL,
-  `data_hora` datetime NOT NULL,
-  `titulo` varchar(200) NOT NULL,
-  `descricao` varchar(5000) NOT NULL,
-  `estado` varchar(200) NOT NULL,
-  `observacao` varchar(5000) DEFAULT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `ordem_servico`
---
-
-LOCK TABLES `ordem_servico` WRITE;
-/*!40000 ALTER TABLE `ordem_servico` DISABLE KEYS */;
-/*!40000 ALTER TABLE `ordem_servico` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
@@ -80,4 +49,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2020-09-08 10:41:35
+-- Dump completed on 2020-09-24 11:00:37
