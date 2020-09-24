@@ -135,6 +135,7 @@ namespace ordem_de_servico
                 string cmd = "INSERT INTO `ordem_servico_observacao` (`id_servico`, `observacao`, `data`) VALUES ('" + IdServico + "', '" + Observacao + "', '" + Data + "');";
                 CG.ExecutarComandoSql(cmd);
                 CarregarInformacoesObservacao();
+                txtObservacao.Clear();
             }
             else
             {
