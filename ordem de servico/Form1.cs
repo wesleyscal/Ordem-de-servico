@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Data;
+using System.Drawing;
 using System.Security.Cryptography.X509Certificates;
 using System.Windows.Forms;
 
@@ -79,11 +80,50 @@ namespace ordem_de_servico
             txtDataFinal.Text = clasegury.DataFinal;
         }
 
+        private void NotificacaoInicial()
+        {
+            DataTable dtNotifica = new DataTable();
+
+            int Aberto = 0;
+            int Andamento = 0;
+            int Finalizado = 0;
+
+            string cmd = "SELECT " +
+                            "ordem_servico.estado " +
+                            "FROM " +
+                            "ordem_servico ;";
+
+            CG.ExecutarComandoSql(cmd);
+            CG.RetornarDadosDataTable(dtNotifica);
+
+            foreach (DataRow r in dtNotifica.Rows)
+            {
+                if (r[0].ToString() == "Aberto")
+                {
+                    Aberto++;
+                }
+                if (r[0].ToString() == "Andamento")
+                {
+                    Andamento++;
+                }
+                if (r[0].ToString() == "Finalizado")
+                {
+                    Finalizado++;
+                }
+            }
+
+            notifyIcon.BalloonTipTitle = "Ordens";
+            notifyIcon.BalloonTipText = "Aberto: " + Aberto + "\n" + "Andamento: " + Andamento + "\n" + "Finalizado: " + Finalizado + "\n";
+            notifyIcon.BalloonTipIcon = ToolTipIcon.Info;
+            notifyIcon.ShowBalloonTip(30000);
+        }
+
         //form
         private void Form1_Load(object sender, EventArgs e)
         {
             atualizarform();
             CarregarDadosComboBox();
+            NotificacaoInicial();
         }
 
         private void Form1_KeyDown(object sender, KeyEventArgs e)

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.dgvOrdem = new System.Windows.Forms.DataGridView();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
@@ -45,6 +46,7 @@
             this.btnNovaOrdem = new System.Windows.Forms.Button();
             this.btnCliente = new System.Windows.Forms.Button();
             this.textBox1 = new System.Windows.Forms.TextBox();
+            this.notifyIcon = new System.Windows.Forms.NotifyIcon(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dgvOrdem)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -225,6 +227,12 @@
             this.textBox1.TabIndex = 4;
             this.textBox1.Text = " || F2 - Atualizar || F3 - Inserir Data ||";
             // 
+            // notifyIcon
+            // 
+            this.notifyIcon.Icon = ((System.Drawing.Icon)(resources.GetObject("notifyIcon.Icon")));
+            this.notifyIcon.Text = "Ordem De Serviço";
+            this.notifyIcon.Visible = true;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -270,6 +278,7 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ComboBox cbbStatus;
+        private System.Windows.Forms.NotifyIcon notifyIcon;
     }
 }
 
