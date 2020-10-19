@@ -225,7 +225,7 @@
             this.textBox1.ReadOnly = true;
             this.textBox1.Size = new System.Drawing.Size(922, 20);
             this.textBox1.TabIndex = 4;
-            this.textBox1.Text = " || F2 - Atualizar || F3 - Inserir Data ||";
+            this.textBox1.Text = " || F2 - Atualizar || F3 - Inserir Data || F4 - Configurar Banco De Dados ||";
             // 
             // notifyIcon
             // 

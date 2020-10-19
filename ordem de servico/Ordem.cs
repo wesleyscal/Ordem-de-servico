@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Fd_DBC;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -17,7 +18,7 @@ namespace ordem_de_servico
             InitializeComponent();
         }
 
-        private clasegury CG = new clasegury();
+        private DBC CG = new DBC();
 
         /* Anotação
          *
@@ -101,7 +102,7 @@ namespace ordem_de_servico
             string status = cbbStatus.Text;
             string observacao = txtObservacao.Text;
 
-            string cmd = "UPDATE `" + clasegury.Banco + "`.`ordem_servico` SET `estado` = '" + status + "' WHERE (`id` = '" + codigo + "');";
+            string cmd = "UPDATE `ordem_servico` SET `estado` = '" + status + "' WHERE (`id` = '" + codigo + "');";
             CG.ExecutarComandoSql(cmd);
             Close();
         }

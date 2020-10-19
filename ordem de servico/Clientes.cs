@@ -1,11 +1,12 @@
-﻿using System;
+﻿using Fd_DBC;
+using System;
 using System.Windows.Forms;
 
 namespace ordem_de_servico
 {
     public partial class Clientes : Form
     {
-        private clasegury CG = new clasegury();
+        private DBC CG = new DBC();
 
         public Clientes()
         {

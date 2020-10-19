@@ -1,11 +1,12 @@
-﻿using System;
+﻿using Fd_DBC;
+using System;
 using System.Windows.Forms;
 
 namespace ordem_de_servico
 {
     public partial class data : Form
     {
-        private clasegury CG = new clasegury();
+        private DBC CG = new DBC();
 
         //Form
         public data()
@@ -15,8 +16,8 @@ namespace ordem_de_servico
 
         private void data_Load(object sender, EventArgs e)
         {
-            clasegury.DataInicial = "";
-            clasegury.DataFinal = "";
+            Form1.DataInicial = "";
+            Form1.DataFinal = "";
         }
 
         //botão
@@ -25,8 +26,8 @@ namespace ordem_de_servico
             DateTime dataValida;
             if (DateTime.TryParse(txtDataInicial.Text, out dataValida) && DateTime.TryParse(txtDatafinal.Text, out dataValida))
             {
-                clasegury.DataInicial = txtDataInicial.Text;
-                clasegury.DataFinal = txtDatafinal.Text;
+                Form1.DataInicial = txtDataInicial.Text;
+                Form1.DataFinal = txtDatafinal.Text;
                 Close();
             }
             else

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Fd_DBC;
+using System;
 using System.Data;
 using System.Windows.Forms;
 
@@ -11,7 +12,7 @@ namespace ordem_de_servico
             InitializeComponent();
         }
 
-        private clasegury CG = new clasegury();
+        private DBC CG = new DBC();
 
         //Metados
         private void CarregarDadosComboBox()

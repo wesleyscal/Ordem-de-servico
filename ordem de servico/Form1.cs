@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Fd_DBC;
+using System;
 using System.Data;
 using System.Drawing;
 using System.Security.Cryptography.X509Certificates;
@@ -12,8 +13,9 @@ namespace ordem_de_servico
         {
             InitializeComponent();
         }
-
-        private clasegury CG = new clasegury();
+        private DBC CG = new DBC();
+        public static string DataInicial = "";
+        public static string DataFinal = "";
 
         //Metodos
         private void atualizarform()
@@ -76,8 +78,8 @@ namespace ordem_de_servico
 
         public void AlterarNomeBotaoData()
         {
-            txtDataInicial.Text = clasegury.DataInicial;
-            txtDataFinal.Text = clasegury.DataFinal;
+            txtDataInicial.Text = DataInicial;
+            txtDataFinal.Text = DataFinal;
         }
 
         private void NotificacaoInicial()
@@ -121,6 +123,17 @@ namespace ordem_de_servico
         //form
         private void Form1_Load(object sender, EventArgs e)
         {
+            try
+            {
+                CG.ConectarBancoDeDados();
+            }
+            catch
+            {
+                ConfigurarBanco CB = new ConfigurarBanco();
+                CB.ShowDialog();
+            }
+
+
             atualizarform();
             CarregarDadosComboBox();
             NotificacaoInicial();
@@ -136,7 +149,7 @@ namespace ordem_de_servico
             {
                 data Fdat = new data();
                 Fdat.ShowDialog(this);
-                if (clasegury.DataFinal != "" && clasegury.DataInicial != "")
+                if (DataFinal != "" && DataInicial != "")
                 {
                     AlterarNomeBotaoData();
                 }
@@ -145,6 +158,11 @@ namespace ordem_de_servico
                     txtDataInicial.Text = "";
                     txtDataFinal.Text = "";
                 }
+            }
+            if (e.KeyCode == Keys.F4)
+            {
+                ConfigurarBanco CB = new ConfigurarBanco();
+                CB.ShowDialog();
             }
         }
 
@@ -177,15 +195,15 @@ namespace ordem_de_servico
             string Status = "";
 
             //Atribuir valor a Condição
-            if (clasegury.DataInicial == "" && clasegury.DataFinal == "")
+            if (DataInicial == "" && DataFinal == "")
             {
                 Data_Inicial = "1000-01-01 00:00:00";
                 Data_Final = "4000-01-01 00:00:00";
             }
             else
             {
-                Data_Inicial = CG.DataMySQL(clasegury.DataInicial) + " 00:00:00";
-                Data_Final = CG.DataMySQL(clasegury.DataFinal) + " 23:59:59";
+                Data_Inicial = CG.DataMySQL(DataInicial) + " 00:00:00";
+                Data_Final = CG.DataMySQL(DataFinal) + " 23:59:59";
             }
             if (cbbCliente.Text == "Todos os Cliente")
             {
@@ -270,6 +288,7 @@ namespace ordem_de_servico
 
                 Ordem Form = new Ordem();
                 Form.ShowDialog();
+                atualizarform();
             }
         }
     }
