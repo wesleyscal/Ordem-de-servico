@@ -20,7 +20,7 @@ namespace ordem_de_servico
         //Metodos
         private void atualizarform()
         {
-            string cmd = "SELECT ordem_servico.id 'Codigo', IFNULL(ordem_cliente.cliente, 'CLIENTE NÃO ENCONTRADO') 'Cliente', ordem_servico.titulo 'Título', ordem_servico.prioridade 'Prioridade', ordem_servico.estado 'Situação', ordem_servico.data_hora 'Data / Hora' FROM ordem_servico LEFT OUTER JOIN ordem_cliente ON(ordem_servico.id_cliente = ordem_cliente.id); ";
+            string cmd = "SELECT ordem_servico.id 'Codigo', IFNULL(ordem_cliente.cliente, 'CLIENTE NÃO ENCONTRADO') 'Cliente', ordem_servico.titulo 'Título', ordem_servico.prioridade 'Prioridade', ordem_servico.estado 'Situação', ordem_servico.data_hora 'Data / Hora' FROM ordem_servico LEFT OUTER JOIN ordem_cliente ON(ordem_servico.id_cliente = ordem_cliente.id) where estado = 'Aberto'; ";
             CG.ExecutarComandoSql(cmd);
             CG.ExibirDGV(dgvOrdem);
             CG.FormatarDGV(dgvOrdem);
@@ -181,10 +181,6 @@ namespace ordem_de_servico
             CarregarDadosComboBox();
         }
 
-        private void btnData_Click(object sender, EventArgs e)
-        {
-        }
-
         private void btnPesquisar_Click(object sender, EventArgs e)
         {
             //variaveis
@@ -255,6 +251,17 @@ namespace ordem_de_servico
             CG.FormatarDGV(dgvOrdem);
 
             dgvOrdem.Columns[0].Visible = false;
+
+            //Limpa os campo
+            cbbCliente.SelectedIndex = 0;
+            cbbStatus.SelectedIndex = 0;
+            cbbUsuario.SelectedIndex = 0;
+
+            DataInicial = "";
+            DataFinal = "";
+            AlterarNomeBotaoData();
+
+
         }
 
         public static DataTable dt = new DataTable();
